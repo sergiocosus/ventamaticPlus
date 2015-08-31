@@ -1,0 +1,128 @@
+header{
+    position:fixed;
+    box-sizing: border-box;
+    overflow: visible;
+
+    top:0;
+    left:0;
+    right:0;
+    margin:auto;
+    width:90%;
+    height: 50px;
+
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    color: white;
+
+    border: solid white;
+    border-width: 0 0 10px 0;
+
+    padding: 5px;
+
+    font-family: 'Varela Round', sans-serif;
+    font-weight: bolder;
+    background-color: deepskyblue;
+
+    -webkit-transition: all .25s;
+    -moz-transition: all .25s;
+    -ms-transition: all .25s;
+    -o-transition: all .25s;
+    transition: all .25s;
+
+}
+
+header h1{
+    text-align: center;
+    font-size: 2em;
+}
+
+
+
+
+
+header>div{
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+#topMenuList{
+    position:fixed;
+    left:0;
+    right:0;
+    margin:auto;
+    text-align: center;
+    background-color: deepskyblue;
+    width: 0px;
+
+    -webkit-border-radius:0 0 10px;
+    -moz-border-radius:0 0 10px;
+    border-radius: 0 0 10px 10px;
+
+    border-style: solid;
+    border-width: 0 10px 10px 10px;
+    border-color: white;
+
+    padding: 1em;
+
+    opacity: 0;
+
+    -webkit-transition: all .25s;
+    -moz-transition: all .25s;
+    -ms-transition: all .25s;
+    -o-transition: all .25s;
+    transition: all .25s;
+}
+
+#topMenuList.showing{
+    width: 300px;
+    opacity: 1;
+}
+
+#topMenuList>li{
+    position:relative;
+    left: -1em;
+    overflow: hidden;
+    font-size: 0em;
+    padding: 0em;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 0px;
+
+    -webkit-transition: all .15s;
+    -moz-transition: all .15s;
+    -ms-transition: all .15s;
+    -o-transition: all .15s;
+    transition: all .15s;
+
+    cursor: pointer;
+}
+
+
+
+
+#topMenuList>li.showing{
+    left:0;
+    font-size: 1.5em;
+    padding: .2em;
+    width:100%;
+}
+
+#topMenuList>li>span{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin:1em;
+    -webkit-transition: all .15s;
+    -moz-transition: all .15s;
+    -ms-transition: all .15s;
+    -o-transition: all .15s;
+    transition: all .15s;
+}
+
+#topMenuList>li>span:hover{
+    border-bottom: solid .3em white;
+}
+
