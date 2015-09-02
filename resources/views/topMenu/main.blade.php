@@ -30,5 +30,8 @@
             color:'yellowgreen'
         }
     ];
-    var topMenu = new TopMenu(options,{{$numberOption}});
+    var topMenu;
+    $(function(){
+        topMenu= new TopMenu(options,{{$numberOption}});
+    });
 </script>

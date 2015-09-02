@@ -10,6 +10,7 @@ function TopMenu(options,currenNumber) {
 
     this.$header = $('header');
     this.$topMenuList = $('#topMenuList');
+    this.$body = $('#body');
     this.current = this.options[currenNumber];
 
     this.fillOptionData=function (option) {
@@ -65,6 +66,7 @@ function TopMenu(options,currenNumber) {
         that.$header.css({'background-color': option.color});
         that.$topMenuList.css({'background-color': option.color});
         that.$header.children('h1').text(appName+" | "+option.title);
+        that.$body.css({'border-color': option.color});
     }
 
     this.options.forEach(this.fillOptionData);
