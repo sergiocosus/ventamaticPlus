@@ -1,7 +1,7 @@
 /**
  * Created by sergio on 30/08/15.
  */
-
+var appName = "Ventamatic+";
 function TopMenu(options,currenNumber) {
     var that = this;
 
@@ -64,10 +64,11 @@ function TopMenu(options,currenNumber) {
     this.changeData = function(option){
         that.$header.css({'background-color': option.color});
         that.$topMenuList.css({'background-color': option.color});
-        that.$header.children('h1').text(option.title);
+        that.$header.children('h1').text(appName+" | "+option.title);
     }
 
     this.options.forEach(this.fillOptionData);
     this.$header.hover(this.onHoverIn, this.onHoverOut);
     this.$topMenuList.children().each(this.onHoverOption);
+    this.changeData(this.current);
 }

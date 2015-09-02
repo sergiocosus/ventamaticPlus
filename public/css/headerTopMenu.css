@@ -109,6 +109,10 @@ header>div{
     padding: .2em;
     width:100%;
 }
+#topMenuList>li.showing:hover{
+    border:solid rgba(255,255,255,.5);
+    border-width: 0 5px 0 5px;
+}
 
 #topMenuList>li>span{
     -webkit-box-sizing: border-box;
@@ -122,7 +126,4 @@ header>div{
     transition: all .15s;
 }
 
-#topMenuList>li>span:hover{
-    border-bottom: solid .3em white;
-}
 

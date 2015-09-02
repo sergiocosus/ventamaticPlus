@@ -1,11 +1,7 @@
-@extends('main')
 
-@section('content')
 <header>
-    <h1>Mi Título</h1>
-
-    <ul id="topMenuList">
-    </ul>
+    <h1></h1>
+    <ul id="topMenuList"></ul>
 
     <script src="js/topMenu.js" ></script>
     <link href="css/headerTopMenu.css" rel="stylesheet" type="text/css">
@@ -14,27 +10,25 @@
 <script>
     var options=[
         {
-            title:'Tacos',
+            title:'Inicio',
             color:'deepskyblue',
         },
         {
-            title:'Gorditas',
+            title:'Servicios',
             color:'palevioletred'
         },
         {
-            title:'Enchiladas',
+            title:'Sucursales',
             color:'indianred'
         },
         {
-            title:'Vegetales U.u',
+            title:'Tienda en línea',
             color:'darkseagreen'
         },
         {
-            title:'Carbones',
+            title:'Otros gatos',
             color:'yellowgreen'
         }
     ];
-    var topMenu = new TopMenu(options,0);
+    var topMenu = new TopMenu(options,{{$numberOption}});
 </script>
-
-@endsection
