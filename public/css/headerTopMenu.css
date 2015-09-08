@@ -17,7 +17,7 @@ header{
     border: solid white;
     border-width: 0 0 10px 0;
 
-    padding: 5px;
+    vertical-align: top;
 
     font-family: 'Varela Round', sans-serif;
     font-weight: bolder;
@@ -31,21 +31,26 @@ header{
 
 }
 
-header h1{
+header > *{
+    margin:5px;
+}
+
+header h1, header h2{
+    display:inline-block;
     text-align: center;
     font-size: 2em;
 }
 
-
-
-
-
-header>div{
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    border-radius: 20px;
-    overflow: hidden;
+header>h2{
+    float:left;
+    margin-left: 15px;
 }
+
+
+
+
+
+
 
 #topMenuList{
     position:fixed;
@@ -126,4 +131,32 @@ header>div{
     transition: all .15s;
 }
 
+#loginButton{
+    float:right;
+    margin: 0px;
 
+    padding: 5px;
+    padding-right: 25px;
+
+    -webkit-border-bottom-right-radius: 50px;
+    -moz-border-bottom-right-radius:50px;
+    border-bottom-right-radius: 50px;
+
+    cursor: pointer;
+}
+
+#loginButton:hover{
+    background-color: rgba(255,255,255, .25);
+    
+}
+#loginButton>span{
+    display:inline-block;
+    margin-right: 10px;
+    vertical-align: top;
+    text-size: 1.4em;
+}
+
+#loginButton>.svg{
+    height: 35px;
+    width: 35px;
+}

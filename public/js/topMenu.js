@@ -1,7 +1,7 @@
 /**
  * Created by sergio on 30/08/15.
  */
-var appName = "Ventamatic+";
+
 function TopMenu(options,currenNumber) {
     var that = this;
 
@@ -10,6 +10,7 @@ function TopMenu(options,currenNumber) {
 
     this.$header = $('header');
     this.$topMenuList = $('#topMenuList');
+    this.$loginButton = $('#loginButton');
     this.$body = $('#body');
     this.current = this.options[currenNumber];
 
@@ -38,12 +39,12 @@ function TopMenu(options,currenNumber) {
     };
 
     this.onHoverOut=function () {
-        var $element = that.$topMenuList.children().first()
+        var $element = that.$topMenuList.children().last()
         showing = false;
         function callToEnd() {
             if ($element.length) {
                 var $back = $element;
-                $element = $back.next();
+                $element = $back.prev();
                 if (!showing) {
                     $back.removeClass('showing');
                     setTimeout(callToEnd, 100);
@@ -65,9 +66,18 @@ function TopMenu(options,currenNumber) {
     this.changeData = function(option){
         that.$header.css({'background-color': option.color});
         that.$topMenuList.css({'background-color': option.color});
-        that.$header.children('h1').text(appName+" | "+option.title);
+        that.$header.children('h1').text(option.title);
         that.$body.css({'border-color': option.color});
     }
+
+    this.$loginButton.hover(function(e){
+        e.stopPropagation();
+
+        console.log("in");
+    }, function(e){
+        console.log("out");
+        e
+    })
 
     this.options.forEach(this.fillOptionData);
     this.$header.hover(this.onHoverIn, this.onHoverOut);

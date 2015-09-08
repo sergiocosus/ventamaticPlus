@@ -8,7 +8,7 @@
     </script>
 
     <section id="body">
-        <img class="svg fillWhite" src="img/icon/market1.svg"/>
+        <img class="svg iconCart" src="img/icon/market1.svg"/>
 
 
     <section/>
@@ -16,7 +16,7 @@
         #body{
             display: inline-block;
             height: auto;
-            width: 100%;
+            width: 90%;
             max-width: 1280px;
             background-color: whitesmoke;
             border: 10px solid deepskyblue ;
@@ -37,7 +37,7 @@
             display: inline-block;
             fill:white;
             max-height: 100%;
-            float:right
+            max-width: 100%;
         }
 
         .fillWhite{

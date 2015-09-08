@@ -49,5 +49,6 @@ body{
     max-height: 100vh;
     background-color: lightgray;
     text-align: center;
+    overflow-x:hidden;
 }
 

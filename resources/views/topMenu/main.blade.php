@@ -1,6 +1,10 @@
 
 <header>
+    <h2>Ventamatic+</h2>
     <h1></h1>
+    <div id="loginButton">
+        <span>Iniciar</br>Sesión</span><img class="svg fillWhite" src="img/icon/user.svg" />
+    </div>
     <ul id="topMenuList"></ul>
 
     <script src="js/topMenu.js" ></script>
