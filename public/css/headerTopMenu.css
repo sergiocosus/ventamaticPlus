@@ -69,8 +69,11 @@ header>h2{
     border-width: 0 10px 10px 10px;
     border-color: white;
 
-    padding: 1em;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
 
+    padding: 1em;
     opacity: 0;
 
     -webkit-transition: all .25s;
