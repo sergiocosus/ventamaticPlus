@@ -1,49 +1,7 @@
 @extends('main')
 
 @section('content')
-    @include('topMenu.main',['numberOption' => 0])
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam bibendum eu neque sed venenatis. Curabitur ultrices enim et euismod dapibus. Morbi tempor ut turpis a porttitor. Aenean et tincidunt tellus. Vivamus vitae risus eu eros aliquam luctus. Ut ipsum leo, tincidunt vel ipsum vitae, efficitur hendrerit diam. Donec nec commodo tortor, sed suscipit nibh. Duis viverra tristique mi, a lobortis libero pellentesque in. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Integer congue vel eros in sagittis. Nunc tristique dui lectus, in dignissim dui placerat nec. Donec ac nunc pharetra, semper purus a, lacinia lectus. Etiam egestas commodo elit, sit amet aliquet orci volutpat sed. Proin rhoncus metus in lectus maximus, nec elementum orci varius. Etiam ut justo ac risus elementum commodo ac hendrerit tortor. Donec molestie arcu leo, varius laoreet justo fermentum at.
 
-    <script>
-
-    </script>
-
-    <section id="body">
-        <img class="svg iconCart" src="img/icon/market1.svg"/>
-
-
-    <section/>
-    <style>
-        #body{
-            display: inline-block;
-            height: auto;
-            width: 90%;
-            max-width: 1280px;
-            background-color: whitesmoke;
-            border: 10px solid deepskyblue ;
-
-
-
-            -webkit-box-sizing: border-box;
-            -moz-box-sizing: border-box;
-            box-sizing: border-box;
-
-            border-radius: 1em;
-
-            margin:1em;
-            padding-top: 3em;
-        }
-
-        .iconCart{
-            display: inline-block;
-            fill:white;
-            max-height: 100%;
-            max-width: 100%;
-        }
-
-        .fillWhite{
-            fill:white;
-        }
-    </style>
-
-
+    Sed lacinia, nisl ac viverra tristique, metus odio molestie erat, ut molestie urna tortor eget est. Ut ac luctus orci, venenatis pulvinar diam. Nulla nec libero feugiat, iaculis orci id, rhoncus nisi. Nam pretium libero eu nisi gravida, in vehicula nulla dictum. Vivamus dapibus sem et lectus mollis vestibulum non at quam. Vestibulum a cursus lectus, volutpat cursus nunc. Vestibulum at hendrerit eros, id varius turpis. Fusce ac dictum nisl, ac aliquet dolor. Fusce maximus vel tortor ut euismod. Praesent eu pellentesque erat, a euismod massa. Nullam malesuada tellus aliquet scelerisque molestie. Etiam feugiat sit amet est eget mollis. Integer vel lectus vel est ornare gravida. Mauris sed porttitor libero. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
 @endsection

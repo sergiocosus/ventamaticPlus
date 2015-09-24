@@ -7,8 +7,8 @@ header{
     left:0;
     right:0;
     margin:auto;
-    width:90%;
-    height: 50px;
+    width:95%;
+    height: 60px;
 
     border-bottom-left-radius: 50px;
     border-bottom-right-radius: 50px;
@@ -29,21 +29,45 @@ header{
     -o-transition: all .25s;
     transition: all .25s;
 
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 header > *{
     margin:5px;
 }
 
-header h1, header h2{
-    display:inline-block;
+#title{
+    position:absolute;
+    left: 0;
+    right: 0;
+    height: 100%;
+    margin: auto;
     text-align: center;
-    font-size: 2em;
+
+}
+
+#title h1{
+    position: absolute;
+    font-size: 1.75em;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
 }
 
 header>h2{
-    float:left;
-    margin-left: 15px;
+    position:absolute;
+    left: 0;
+    right: 0;
+    font-size: 2em;
+    text-align: center;
+    margin: 2px auto;
+    color: rgba(255,255,255,.3);
 }
 
 
@@ -54,6 +78,7 @@ header>h2{
 
 #topMenuList{
     position:fixed;
+    top: 50px;
     left:0;
     right:0;
     margin:auto;
@@ -135,10 +160,15 @@ header>h2{
 }
 
 #loginButton{
-    float:right;
-    margin: 0px;
-
-    padding: 5px;
+    position: absolute;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding-top:  10px;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    height: 100%;
     padding-right: 25px;
 
     -webkit-border-bottom-right-radius: 50px;
@@ -146,20 +176,40 @@ header>h2{
     border-bottom-right-radius: 50px;
 
     cursor: pointer;
+
+    z-index: 110;
 }
 
 #loginButton:hover{
     background-color: rgba(255,255,255, .25);
-    
-}
-#loginButton>span{
-    display:inline-block;
-    margin-right: 10px;
-    vertical-align: top;
-    text-size: 1.4em;
 }
 
-#loginButton>.svg{
+#loginButton>span{
+    display:inline-block;
+    text-align: center;
+    margin-right: 5px;
+    vertical-align: top;
+    text-size: 1.5em;
+}
+
+#loginButton>.svg {
+    float: right;
+    vertical-align: bottom;
+    height: 40px;
+    width: 40px;
+}
+
+
+
+#search{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    margin-left: 20px;
+    z-index: 110;
+}
+
+#search>.svg{
     height: 35px;
     width: 35px;
 }

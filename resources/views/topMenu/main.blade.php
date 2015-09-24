@@ -1,11 +1,20 @@
 
 <header>
-    <h2>Ventamatic+</h2>
-    <h1></h1>
-    <div id="loginButton">
-        <span>Iniciar</br>Sesión</span><img class="svg fillWhite" src="img/icon/user.svg" />
+    <div id="search">
+        <img class="svg fillWhite" src="img/icon/search.svg" />
     </div>
-    <ul id="topMenuList"></ul>
+
+    <h2>Ventamatic+</h2>
+    <div id="title">
+        <h1></h1>
+        <ul id="topMenuList"></ul>
+    </div>
+    <div id="loginButton">
+
+        <span>Iniciar</br>Sesión</span>
+        <img class="svg fillWhite" src="img/icon/user.svg" />
+    </div>
+
 
     <script src="js/topMenu.js" ></script>
     <link href="css/headerTopMenu.css" rel="stylesheet" type="text/css">
@@ -26,11 +35,11 @@
             color:'indianred'
         },
         {
-            title:'Tienda en línea',
+            title:'Productos',
             color:'darkseagreen'
         },
         {
-            title:'Otros gatos',
+            title:'Administración',
             color:'yellowgreen'
         }
     ];

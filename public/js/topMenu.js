@@ -9,9 +9,10 @@ function TopMenu(options,currenNumber) {
     var showing = false;
 
     this.$header = $('header');
+    this.$title = $('#title');
     this.$topMenuList = $('#topMenuList');
     this.$loginButton = $('#loginButton');
-    this.$body = $('#body');
+    this.$mainContainer = $('#mainContainer');
     this.current = this.options[currenNumber];
 
     this.fillOptionData=function (option) {
@@ -66,8 +67,8 @@ function TopMenu(options,currenNumber) {
     this.changeData = function(option){
         that.$header.css({'background-color': option.color});
         that.$topMenuList.css({'background-color': option.color});
-        that.$header.children('h1').text(option.title);
-        that.$body.css({'border-color': option.color});
+        that.$title.children('h1').text(option.title);
+        that.$mainContainer.css({'border-color': option.color});
     }
 
     this.$loginButton.hover(function(e){
@@ -80,7 +81,7 @@ function TopMenu(options,currenNumber) {
     })
 
     this.options.forEach(this.fillOptionData);
-    this.$header.hover(this.onHoverIn, this.onHoverOut);
+    this.$header.children('#title').hover(this.onHoverIn, this.onHoverOut);
     this.$topMenuList.children().each(this.onHoverOption);
     this.changeData(this.current);
 }
