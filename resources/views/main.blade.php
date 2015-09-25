@@ -13,71 +13,8 @@
 @include('topMenu.main',['numberOption' => 0])
 
 <section id="mainContainer">
-    <img id="cartBackground" class="svg iconCart" src=""/>
     @yield('content','There are no content!')
-        <section/>
-        <style>
-            #mainContainer {
-                display: inline-block;
-                overflow: hidden;
-                height: auto;
-                width: 90%;
-                max-width: 1280px;
-                background-image: url('/img/icon/market1.svg');
-
-                background-color: #eeeeee;
-                background-position: center center;
-                background-repeat: no-repeat;
-                border: 10px solid deepskyblue ;
-
-                color: #333333;
-
-                font-family: 'Varela Round', sans-serif;;
-
-                -webkit-box-sizing: border-box;
-                -moz-box-sizing: border-box;
-                box-sizing: border-box;
-
-                border-radius: 1em;
-
-                margin:1em;
-                padding: 1em;
-                padding-top: 3em;
-                background-size: 30% auto;
-
-
-                -webkit-transition: all .15s;
-                -moz-transition: all .15s;
-                -ms-transition: all .15s;
-                -o-transition: all .15s;
-                transition: all .15s;
-            }
-
-            .iconCart{
-                display: inline-block;
-                -webkit-box-sizing: border-box;
-                -moz-box-sizing: border-box;
-                box-sizing: border-box;
-                fill:white;
-                max-height: 100%;
-                max-width: 100%;
-                border: solid transparent 25px;
-            }
-
-            .fillWhite{
-                fill:white;
-            }
-
-            #cartBackground{
-                position: absolute;
-                top:0;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                margin: auto;
-            }
-        </style>
-
+<section/>
 
 
 </body>

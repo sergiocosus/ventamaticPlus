@@ -6,25 +6,28 @@
 
     <h2>Ventamatic+</h2>
     <div id="title">
-        <h1></h1>
+        <div>
+            <img src="/img/icon/arrow-down.svg" />
+            <h1></h1>
+        </div>
         <ul id="topMenuList"></ul>
     </div>
     <div id="loginButton">
 
-        <span>Iniciar</br>Sesión</span>
+        <span>Iniciar<br/>Sesión</span>
         <img class="svg fillWhite" src="img/icon/user.svg" />
     </div>
 
 
     <script src="js/topMenu.js" ></script>
-    <link href="css/headerTopMenu.css" rel="stylesheet" type="text/css">
+    <link href="css/headerTopMenu.css" rel="stylesheet" type="text/css" />
 </header>
 
 <script>
     var options=[
         {
             title:'Inicio',
-            color:'deepskyblue',
+            color:'deepskyblue'
         },
         {
             title:'Servicios',
@@ -45,6 +48,7 @@
     ];
     var topMenu;
     $(function(){
-        topMenu= new TopMenu(options,{{$numberOption}});
+        var numberOption = {{$numberOption}};
+        topMenu= new TopMenu(options,numberOption);
     });
 </script>
