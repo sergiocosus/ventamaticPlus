@@ -16,7 +16,10 @@ function TopMenu(options,currenNumber) {
     this.current = this.options[currenNumber];
 
     this.fillOptionData=function (option) {
-        var $text = $('<span>').text(option.title);
+        var $text = $('<a>',{
+            text : option.title,
+            href : '/'+option.view
+        });
         $('<li>').css('background-color', option.color)
             .append($text)
             .appendTo(that.$topMenuList);
@@ -73,11 +76,7 @@ function TopMenu(options,currenNumber) {
 
     this.$loginButton.hover(function(e){
         e.stopPropagation();
-
-        console.log("in");
     }, function(e){
-        console.log("out");
-        e
     })
 
     this.options.forEach(this.fillOptionData);

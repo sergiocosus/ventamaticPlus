@@ -21,7 +21,7 @@ header{
 
     font-family: 'Varela Round', sans-serif;
     font-weight: bolder;
-    background-color: deepskyblue;
+
 
     -webkit-transition: all .25s;
     -moz-transition: all .25s;
@@ -155,11 +155,16 @@ header>h2{
     border-width: 0 5px 0 5px;
 }
 
-#topMenuList>li>span{
+#topMenuList>li>a{
+    display: inline-block;
+    width: 100%;
+
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    margin:1em;
+
+    color:white;
+    text-decoration: none;
     -webkit-transition: all .15s;
     -moz-transition: all .15s;
     -ms-transition: all .15s;
@@ -216,7 +221,6 @@ header>h2{
 }
 
 
-
 #search{
     position: absolute;
     left: 0;
@@ -229,3 +233,4 @@ header>h2{
     height: 35px;
     width: 35px;
 }
+

@@ -11,6 +11,52 @@
 |
 */
 
+$navLinks=json_decode('[
+        {
+            "title":"Inicio",
+            "view" : "",
+            "color":"deepskyblue"
+        },
+        {
+            "title":"Sucursales",
+            "view" : "branch",
+            "color":"indianred"
+        },
+        {
+            "title":"Productos",
+            "view": "product",
+            "color":"darkseagreen"
+        },
+        {
+            "title":"Administración",
+            "view": "management",
+            "color":"yellowgreen"
+        },
+        {
+            "title":"Misión",
+            "view" : "mision",
+            "color":"palevioletred"
+        }
+    ]');
+
+View::share('navLinks', $navLinks);
+
 Route::get('/', function () {
-    return view('index.index');
+    return view('index.index',['viewName' => '']);
+});
+
+Route::get('/branch', function () {
+    return view('branch.index' , ['viewName' => 'branch']);
+});
+
+Route::get('/product', function () {
+    return view('product.index' , ['viewName' => 'product']);
+});
+
+Route::get('/management', function () {
+    return view('management.index',  ['viewName' => 'management']);
+});
+
+Route::get('/mision', function () {
+    return view('mision.index',  ['viewName' => 'mision']);
 });
