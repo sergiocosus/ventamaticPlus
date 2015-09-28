@@ -7,7 +7,7 @@ header{
     left:0;
     right:0;
     margin:auto;
-    width:95%;
+    width:97%;
     height: 60px;
 
     border-bottom-left-radius: 50px;
@@ -203,7 +203,6 @@ header>h2{
     text-align: center;
     margin-right: 5px;
     vertical-align: top;
-    text-size: 1.5em;
 }
 
 @media screen and (max-width: 480px){

@@ -47,8 +47,8 @@ table {
 
 
 body{
-    width:100vw;
-    max-height: 100vh;
+    max-width:100%;
+    min-height: 100%;
     background-color: lightgray;
     text-align: center;
     overflow-x:hidden;
@@ -61,7 +61,7 @@ body{
     display: inline-block;
     overflow: hidden;
     height: auto;
-    width: 90%;
+    width: 95%;
     max-width: 1280px;
     background-image: url('/img/icon/market1.svg');
 
@@ -93,6 +93,15 @@ body{
     transition: all .15s;
 
 }
+
+@media screen and (max-width: 640px){
+    #mainContainer{
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+
 
 .iconCart{
     display: inline-block;

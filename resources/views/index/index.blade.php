@@ -91,9 +91,13 @@
             max-width: 100%;
         }
 
-        @media screen and (max-width: 480px){
+        @media  (max-width: 640px){
             .main-content-left, .main-content-right{
                 width: 100%;
+            }
+            .main-content-left>div{
+                border-width: .3em;
+                font-size: 1em;
             }
         }
 
