@@ -83,7 +83,7 @@ body{
     margin:1em;
     padding: 1em;
     padding-top: 3em;
-    background-size: 30% auto;
+    background-size: 70% auto;
 
 
     -webkit-transition: all .15s;
@@ -116,13 +116,4 @@ body{
 
 .fillWhite{
     fill:white;
-}
-
-#cartBackground{
-    position: absolute;
-    top:0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
 }
