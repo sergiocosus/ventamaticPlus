@@ -3,7 +3,6 @@
     <div id="search">
         <img class="svg fillWhite" src="img/icon/search.svg" />
     </div>
-
     <h2>Ventamatic+</h2>
     <div id="title">
         <div>
@@ -15,9 +14,8 @@
     <div id="loginButton">
         <span>Iniciar<br/>Sesión</span>
         <img class="svg fillWhite" src="img/icon/user.svg" />
-        @include('components.login')
+        @include('topMenu.login')
     </div>
-
     <script src="js/topMenu.js" ></script>
     <link href="css/headerTopMenu.css" rel="stylesheet" type="text/css" />
 </header>
@@ -47,7 +45,7 @@
         }
     ?>
 <style>
-    header{
+    header, #login{
         background-color: {{$navLink->color}};
     }
     #mainContainer {

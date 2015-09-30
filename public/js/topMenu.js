@@ -12,6 +12,7 @@ function TopMenu(options,currenNumber) {
     this.$title = $('#title');
     this.$topMenuList = $('#topMenuList');
     this.$loginButton = $('#loginButton');
+    this.$login = $('#login');
     this.$mainContainer = $('#mainContainer');
     this.current = this.options[currenNumber];
 
@@ -70,6 +71,7 @@ function TopMenu(options,currenNumber) {
     this.changeData = function(option){
         that.$header.css({'background-color': option.color});
         that.$topMenuList.css({'background-color': option.color});
+        that.$login.css({'background-color': option.color});
         that.$title.find('h1').text(option.title);
         that.$mainContainer.css({'border-color': option.color});
     }

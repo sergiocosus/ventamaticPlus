@@ -125,12 +125,12 @@ header>h2{
     position:relative;
     left: -1em;
     overflow: hidden;
-    font-size: 0em;
-    padding: 0em;
+    font-size: 0;
+    padding: 0;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    width: 0px;
+    width: 0;
 
     -webkit-transition: all .15s;
     -moz-transition: all .15s;
@@ -147,7 +147,7 @@ header>h2{
 #topMenuList>li.showing{
     left:0;
     font-size: 1.5em;
-    padding: .2em;
+    padding: 0;
     width:100%;
 }
 #topMenuList>li.showing:hover{
@@ -159,6 +159,7 @@ header>h2{
     display: inline-block;
     width: 100%;
 
+    margin: .2em;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -177,12 +178,13 @@ header>h2{
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    padding-top:  10px;
+
+    padding: 10px 25px 0 10px;
+
     right: 0;
     bottom: 0;
     margin: 0;
     height: 100%;
-    padding-right: 25px;
 
     -webkit-border-bottom-right-radius: 50px;
     -moz-border-bottom-right-radius:50px;
