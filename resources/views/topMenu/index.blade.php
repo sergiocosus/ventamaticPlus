@@ -15,6 +15,7 @@
     <div id="loginButton">
         <span>Iniciar<br/>Sesión</span>
         <img class="svg fillWhite" src="img/icon/user.svg" />
+        @include('components.login')
     </div>
 
     <script src="js/topMenu.js" ></script>
