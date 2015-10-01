@@ -76,10 +76,7 @@ function TopMenu(options,currenNumber) {
         that.$mainContainer.css({'border-color': option.color});
     }
 
-    this.$loginButton.hover(function(e){
-        e.stopPropagation();
-    }, function(e){
-    })
+
 
     this.options.forEach(this.fillOptionData);
     this.$header.children('#title').hover(this.onHoverIn, this.onHoverOut);

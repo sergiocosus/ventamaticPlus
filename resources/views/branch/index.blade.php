@@ -25,7 +25,7 @@
         font-size: 1.5em;
         text-align: center;
         color: white;
-        background-color: rgba(0,0,0,.5);
+        background-color: rgba(255,0,0,.5);
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
         padding: 5px;
@@ -53,7 +53,31 @@
         }
     }
 
+   .contact.button{
+       background-color: dimgray;
+       font-size: 2em;
+       cursor: pointer;
+
+    }
+
+    .contact.button:hover {
+        color:darkslategray;
+        background-color: rgba(255,255,255,.5);
+        border-color:darkslategray;
+    }
+
+    .contact.button img{
+        height: 1em;
+    }
+
+
 </style>
+
+<section class="">
+    <a class="contact button" href="mailto:contacto@ventamatic.plus">
+        <img src="img/icon/mail.svg" /> Contacto
+    </a>
+</section>
 <section class="branch">
     <div>
         <a href="https://www.google.com.mx/maps/dir//21.8769145,-102.3116163/@21.8764526,-102.3110609,17z/data=!4m2!4m1!3e2?hl=es" >

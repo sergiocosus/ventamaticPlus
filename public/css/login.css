@@ -1,4 +1,4 @@
-#login{
+#login, #search{
     position: fixed;
     box-sizing: border-box;
     top: 60px;
@@ -14,6 +14,8 @@
     background-color: deepskyblue ;
     color:white;
 
+    font-size: 1em;
+
     text-align: center;
     box-shadow: 0 0 10px gray;
 
@@ -23,6 +25,8 @@
     -o-transition: all .5s;
     transition: all .5s;
 }
+
+
 
 #login h3{
     text-align: center;
@@ -55,7 +59,7 @@
     border-bottom: white solid 10px;
 }
 
-#login>a, #login input[type="submit"] {
+#login>a, #login input[type="submit"], .button {
     display: inline-block;
     text-decoration: none;
     border: white 1px solid;
@@ -66,7 +70,7 @@
 
     padding: 5px;
     margin: 5px;
-    font-size: 1.5em;
+    font-size: 1em;
 
     -webkit-transition: all .25s;
     -moz-transition: all .25s;
@@ -75,7 +79,7 @@
     transition: all .25s;
 }
 
-#login>a:hover, #login input[type="submit"]:hover{
+#login>a:hover, #login input[type="submit"]:hover, .button:hover{
     background-color: rgba(255,255,255,.5);
 }
 
@@ -88,9 +92,52 @@
     -o-transform: translateY(-20px);
     transform: translateY(-20px);
 }
-extraarea{
+
+.extra-area{
     position:absolute;
     height: 30px;
     top:-30px;
     width: 100%;
 }
+
+#search img{
+    position: absolute;
+    box-sizing: border-box;
+    right: 0;
+    margin-left: 5px;
+    height: 100%;
+    border: transparent solid 5px;
+    background-color: deepskyblue;
+    cursor: pointer;
+}
+
+
+
+
+#searchButton{
+    overflow: visible;
+}
+
+#searchButton:hover{
+    background-color: rgba(255,255,255, .5);
+}
+
+#search{
+    max-width: 500px;
+    top: 50px;
+    left: 0;
+    margin:5px;
+    padding: 2px;
+    font-size: 2em;
+}
+
+#search input{
+    box-sizing: border-box;
+    width: 100%;
+
+    font-size: 1em;
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+}
+

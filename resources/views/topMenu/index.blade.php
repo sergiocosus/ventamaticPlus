@@ -1,7 +1,8 @@
 
 <header>
-    <div id="search">
+    <div id="searchButton">
         <img class="svg fillWhite" src="img/icon/search.svg" />
+        @include('topMenu.search')
     </div>
     <h2>Ventamatic+</h2>
     <div id="title">

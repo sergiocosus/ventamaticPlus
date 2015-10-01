@@ -2,14 +2,14 @@
 
 <section id="login" class="hide">
     <figure></figure>
-    <extraarea></extraarea>
+    <div class="extra-area"></div>
     <h3>
-        Iniciar Sesión
+        Bienvenido
     </h3>
     <form>
         <input type="text" name="username" placeholder="Usuario" />
         <input type="password" name="password" placeholder="Contraseña" />
-        <input type="submit" />
+        <input type="submit" value="Iniciar Sesión"/>
     </form>
     <p>¿No tienes una cuenta? Andále...</p>
     <a>
