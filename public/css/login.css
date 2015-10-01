@@ -59,7 +59,7 @@
     border-bottom: white solid 10px;
 }
 
-#login>a, #login input[type="submit"], .button {
+#login>a, #login input[type="submit"], button, .button{
     display: inline-block;
     text-decoration: none;
     border: white 1px solid;
@@ -79,7 +79,7 @@
     transition: all .25s;
 }
 
-#login>a:hover, #login input[type="submit"]:hover, .button:hover{
+#login>a:hover, #login input[type="submit"]:hover,.button:hover, button:hover{
     background-color: rgba(255,255,255,.5);
 }
 
@@ -100,16 +100,7 @@
     width: 100%;
 }
 
-#search img{
-    position: absolute;
-    box-sizing: border-box;
-    right: 0;
-    margin-left: 5px;
-    height: 100%;
-    border: transparent solid 5px;
-    background-color: deepskyblue;
-    cursor: pointer;
-}
+
 
 
 
@@ -131,6 +122,7 @@
     font-size: 2em;
 }
 
+
 #search input{
     box-sizing: border-box;
     width: 100%;
@@ -140,4 +132,16 @@
     border: none;
     padding: 5px;
 }
+
+#search img{
+    position: absolute;
+    box-sizing: border-box;
+    right: 0;
+    margin-left: 5px;
+    height: 100%;
+    border: transparent solid 5px;
+    background-color: deepskyblue;
+    cursor: pointer;
+}
+
 

@@ -33,8 +33,8 @@ $navLinks=json_decode('[
             "color":"yellowgreen"
         },
         {
-            "title":"Misión",
-            "view" : "mision",
+            "title":"Nosotros",
+            "view" : "us",
             "color":"palevioletred"
         }
     ]');
@@ -57,6 +57,6 @@ Route::get('/management', function () {
     return view('management.index',  ['viewName' => 'management']);
 });
 
-Route::get('/mision', function () {
-    return view('mision.index',  ['viewName' => 'mision']);
+Route::get('/us', function () {
+    return view('us.index',  ['viewName' => 'us']);
 });

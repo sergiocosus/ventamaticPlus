@@ -122,9 +122,155 @@
             <span>Electrodomésticos</span>
         </div>
     </div><div class="main-content-right">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam bibendum eu neque sed venenatis. Curabitur ultrices enim et euismod dapibus. Morbi tempor ut turpis a porttitor. Aenean et tincidunt tellus. Vivamus vitae risus eu eros aliquam luctus. Ut ipsum leo, tincidunt vel ipsum vitae, efficitur hendrerit diam. Donec nec commodo tortor, sed suscipit nibh. Duis viverra tristique mi, a lobortis libero pellentesque in. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Integer congue vel eros in sagittis. Nunc tristique dui lectus, in dignissim dui placerat nec. Donec ac nunc pharetra, semper purus a, lacinia lectus. Etiam egestas commodo elit, sit amet aliquet orci volutpat sed. Proin rhoncus metus in lectus maximus, nec elementum orci varius. Etiam ut justo ac risus elementum commodo ac hendrerit tortor. Donec molestie arcu leo, varius laoreet justo fermentum at.
-
-        Sed lacinia, nisl ac viverra tristique, metus odio molestie erat, ut molestie urna tortor eget est. Ut ac luctus orci, venenatis pulvinar diam. Nulla nec libero feugiat, iaculis orci id, rhoncus nisi. Nam pretium libero eu nisi gravida, in vehicula nulla dictum. Vivamus dapibus sem et lectus mollis vestibulum non at quam. Vestibulum a cursus lectus, volutpat cursus nunc. Vestibulum at hendrerit eros, id varius turpis. Fusce ac dictum nisl, ac aliquet dolor. Fusce maximus vel tortor ut euismod. Praesent eu pellentesque erat, a euismod massa. Nullam malesuada tellus aliquet scelerisque molestie. Etiam feugiat sit amet est eget mollis. Integer vel lectus vel est ornare gravida. Mauris sed porttitor libero. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
+        <button class="registro">
+            <img src="/img/icon/singin.svg">
+            ¡Regístrate!
+        </button>
+        <a href="/us">
+            <button class="nosotros">
+                <img src="/img/icon/singin.svg">
+                Conoce acerca de nosotros
+            </button>
+        </a>
+        <div class="button busquedaOpcion">
+            <span><img src="/img/icon/singin.svg">Productos</span>
+            <form action="/product" class="hide">
+                <img src="img/icon/search.svg" />
+                <input type="text" name="search" placeholder="¡Teclee sus deseos!" />
+            </form>
+        </div>
     </div>
 
+    <script>
+        $busquedaOpcion = $('.busquedaOpcion');
+        $spanBusquedaOpcion = $busquedaOpcion.find('span');
+        $formBusquedaOpcion = $busquedaOpcion.find('form');
+        $busquedaOpcion.hover(function(){
+            $spanBusquedaOpcion.addClass('hide');
+            $formBusquedaOpcion.removeClass('hide');
+            setTimeout(function(){
+                $formBusquedaOpcion.find('[name="search"]').focus();
+            },500);
+        }, function(){
+            $spanBusquedaOpcion.removeClass('hide');
+            $formBusquedaOpcion.addClass('hide');
+        })
+    </script>
+
+    <style>
+        button.registro {
+            box-sizing: border-box;
+            width: 80%;
+            font-size: 1.5em;
+            background-color: deepskyblue;
+            cursor: pointer;
+        }
+
+        button.registro *{
+            vertical-align: top;;
+        }
+
+        button.registro img{
+            height: 1.2em;
+        }
+
+        button.registro:hover{
+            color:deepskyblue;
+            background-color: rgba(255,255,255,.5);
+            border-color: deepskyblue;
+        }
+
+
+        button.nosotros {
+            box-sizing: border-box;
+            width: 80%;
+            font-size: 1.5em;
+            background-color: rgb(219, 112, 147);
+            cursor: pointer;
+        }
+
+        button.nosotros *{
+            vertical-align: top;;
+        }
+
+        button.nosotros img{
+            height: 1.2em;
+        }
+
+        button.nosotros:hover{
+            color:rgb(219, 112, 147);
+            background-color: rgba(255,255,255,.5);
+            border-color: rgb(219, 112, 147);
+        }
+
+
+
+
+
+        .button.busquedaOpcion{
+            height: 52px;
+        }
+
+        .button.busquedaOpcion input{
+            box-sizing: border-box;
+            width: 100%;
+
+            font-size: 1em;
+            border-radius: 5px;
+            border: none;
+            padding: 5px;
+        }
+
+        .button.busquedaOpcion form img{
+            position: absolute;
+            box-sizing: border-box;
+            top: 0;
+            right: 0;
+            margin-left: 5px;
+            height: 100%;
+            border: transparent solid 5px;
+            background-color: rgb(143, 188, 143);;
+            cursor: pointer;
+        }
+
+        .button.busquedaOpcion {
+            position:relative;
+            box-sizing: border-box;
+            width: 80%;
+            font-size: 1.5em;
+            background-color: rgb(143, 188, 143);
+            cursor: pointer;
+        }
+        .button.busquedaOpcion:hover{
+            color: rgb(143, 188, 143);
+            background-color: rgba(255,255,255, .5);
+            border-color: rgb(143, 188, 143);
+        }
+        .button.busquedaOpcion:hover span{
+            display:none;
+        }
+
+
+        .button.busquedaOpcion *{
+            vertical-align: top;
+        }
+
+        .button.busquedaOpcion img{
+            height: 1.2em;
+
+        }
+
+
+
+        .button.busquedaOpcion input{
+            width: 100%;
+            height: 40px;
+            border-radius: 10px;
+        }
+        .button.busquedaOpcion:hover{
+            color:deepskyblue;
+            background-color: rgba(255,255,255,.5);
+            border-color: rgb(143, 188, 143);;
+        }
+    </style>
 @endsection

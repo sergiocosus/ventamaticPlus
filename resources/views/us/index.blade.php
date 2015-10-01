@@ -2,7 +2,11 @@
 
 @section('content')
 <div class="mision">
-
+    <p style="margin-top:1em">
+        <b>Ventamatic+</b> es una empresa dedicada a ofrecer variedad y calidad en sus
+        productos a precios convenientes para el cliente. Contamos con una tienda online
+        y varias sucursales físicas en el estado de Aguascalientes
+    </p>
     <h3>
         <img src="img/icon/mision.svg">
         Misión
@@ -19,7 +23,9 @@
         Visión
     </h3>
     <p>
-        Llevar la cobertura de todos nuestros productos al nivel nacional.
+        Llevar la cobertura de todos nuestros servicios y
+        productos al nivel nacional.<br/>
+        Innovar en la manera de interactuar con el cliente.
     </p>
 
     <h3>
@@ -44,6 +50,8 @@
         .mision img{
             height: .75em;
         }
+
+
     </style>
 
 </div>
