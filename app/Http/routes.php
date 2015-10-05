@@ -23,6 +23,11 @@ $navLinks=json_decode('[
             "color":"indianred"
         },
         {
+            "title":"Nosotros",
+            "view" : "us",
+            "color":"palevioletred"
+        },
+        {
             "title":"Productos",
             "view": "product",
             "color":"darkseagreen"
@@ -31,12 +36,8 @@ $navLinks=json_decode('[
             "title":"Administración",
             "view": "management",
             "color":"yellowgreen"
-        },
-        {
-            "title":"Nosotros",
-            "view" : "us",
-            "color":"palevioletred"
         }
+
     ]');
 
 View::share('navLinks', $navLinks);

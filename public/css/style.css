@@ -63,6 +63,7 @@ body{
     height: auto;
     width: 95%;
     max-width: 1580px;
+    min-height: 25%;
     background-image: url('/img/icon/market1.svg');
 
     background-color: #eeeeee;

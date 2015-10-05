@@ -80,7 +80,7 @@
         //you can remove responsive code if you don't want the slider scales while window resizes
         function ScaleSlider() {
 
-            var bodyWidth = $('#mainContainer').innerWidth()-20;
+            var bodyWidth = $('#mainContainer').innerWidth();
             //bodyWidth = 200;
             if (bodyWidth)
                 jssor_slider1.$ScaleWidth(Math.min(bodyWidth, 1920));

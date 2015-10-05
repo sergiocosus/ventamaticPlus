@@ -4,7 +4,7 @@
     <div class="extra-area"></div>
     <form action="/product">
         <img src="img/icon/search.svg" />
-        <input type="text" name="search" placeholder="¡Teclee sus deseos!" />
+        <input type="text" name="search" placeholder="¡Teclea tus deseos!" />
     </form>
     <div></div>
 </section>

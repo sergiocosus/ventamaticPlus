@@ -1,0 +1,208 @@
+
+#mainContainer{
+    padding-top: 1.5em;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.gallery-container{
+    border-radius: 0 0 30px 30px;
+    overflow: hidden;
+    border-bottom: white 0.5em solid;
+}
+
+.main-content-left, .main-content-right{
+    display: inline-block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+    vertical-align: top;
+    padding: 1em;
+
+    width: 50%;
+}
+
+
+
+
+
+/********************* MAIN CONTENT LEFT ***************/
+
+.main-content-left>div{
+    display: inline-block;
+    box-sizing: border-box;
+    padding: .5em;
+    max-width: 45%;
+    margin: 2.5%;
+    background-color: palevioletred;
+    border: .5em solid white;
+    border-radius: 2em;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -ms-transition: all .5s;
+    -o-transition: all .5s;
+    transition: all .5s;
+    color:white;
+    font-weight: bold;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.main-content-left>div:nth-child(0){
+    background-color: palevioletred
+}
+
+.main-content-left>div:nth-child(1){
+    background-color: deepskyblue;
+}
+.main-content-left>div:nth-child(2){
+    background-color: darkseagreen;
+}
+.main-content-left>div:nth-child(3){
+    background-color: indianred;
+}
+
+.main-content-left>div:hover{
+    -webkit-transform: scale(1.2, 1.2);
+    -moz-transform: scale(1.2, 1.2);
+    -ms-transform: scale(1.2, 1.2);
+    -o-transform: scale(1.2, 1.2);
+    transform: scale(1.2, 1.2);
+}
+
+.main-content-left>div>img{
+    max-width: 100%;
+}
+
+
+/********************* MAIN CONTENT RIGHT ***************/
+
+.main-content-right .button{
+    box-sizing: border-box;
+    width: 80%;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.main-content-right .button *{
+    vertical-align: top;
+}
+
+.main-content-right .button img{
+    height: 1.2em;
+}
+
+
+
+.button.registro {
+    background-color: deepskyblue;
+}
+
+.button.registro:hover{
+    color:deepskyblue;
+    background-color: rgba(255,255,255,.5);
+    border-color: deepskyblue;
+}
+
+.button.branch {
+    background-color: rgb(205, 92, 92);
+}
+
+.button.branch:hover{
+    color:rgb(205, 92, 92);
+    background-color: rgba(255,255,255,.5);
+    border-color: rgb(205, 92, 92);
+}
+
+.button.nosotros {
+    background-color: rgb(219, 112, 147);
+}
+
+.button.nosotros:hover{
+    color:rgb(219, 112, 147);
+    background-color: rgba(255,255,255,.5);
+    border-color: rgb(219, 112, 147);
+}
+
+
+.button.busquedaOpcion{
+    height: 40px;
+}
+
+.button.busquedaOpcion:hover{
+    height: 52px;
+}
+
+.button.busquedaOpcion input{
+    box-sizing: border-box;
+    width: 100%;
+    font-size: 1em;
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+}
+
+.button.busquedaOpcion form img{
+    position: absolute;
+    box-sizing: border-box;
+    top: 0;
+    right: 0;
+    margin-left: 5px;
+    height: 100%;
+    border: transparent solid 5px;
+    background-color: rgb(143, 188, 143);
+    cursor: pointer;
+}
+
+.button.busquedaOpcion {
+    position:relative;
+    box-sizing: border-box;
+    width: 80%;
+    font-size: 1.5em;
+    background-color: rgb(143, 188, 143);
+    cursor: pointer;
+}
+.button.busquedaOpcion:hover{
+    color: rgb(143, 188, 143);
+    background-color: rgba(255,255,255, .5);
+    border-color: rgb(143, 188, 143);
+}
+.button.busquedaOpcion:hover span{
+    display:none;
+}
+
+.button.busquedaOpcion input{
+    width: 100%;
+    height: 40px;
+    border-radius: 10px;
+}
+.button.busquedaOpcion:hover{
+    color:deepskyblue;
+    background-color: rgba(255,255,255,.5);
+    border-color: rgb(143, 188, 143);;
+}
+
+
+/*** MEDIA QUERIES! ***********/
+
+
+@media  (max-width: 960px){
+    .main-content-left, .main-content-right{
+        width: 100%;
+    }
+    .main-content-left>div{
+        border-width: .3em;
+        font-size: 1.5em;
+    }
+}
+
+@media  (max-width: 640px){
+    .main-content-left, .main-content-right{
+        width: 100%;
+    }
+    .main-content-left>div{
+        border-width: .3em;
+        font-size: .75em;
+    }
+}

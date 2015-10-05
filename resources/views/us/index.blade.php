@@ -1,6 +1,17 @@
 @extends('index')
 
 @section('content')
+
+<div id="us-images">
+    <div>
+        <img src="img/us/001.png">
+    </div><div>
+        <img src="img/us/002.png">
+    </div><div>
+        <img src="img/us/003.png">
+    </div>
+</div>
+
 <div class="mision">
     <p style="margin-top:1em">
         <b>Ventamatic+</b> es una empresa dedicada a ofrecer variedad y calidad en sus
@@ -12,7 +23,7 @@
         Misión
     </h3>
     <p>
-        Proveer la mayor vareidad y calidad de productos a nuestros clientes
+        Proveer la mayor variedad y calidad de productos a nuestros clientes
         con una experiencia satisfactoria.
         Todo con base en nuestra política de ética que implica Franqueza,
         Honestidad, Veracidad y Espíritu de Servicio.
@@ -50,9 +61,23 @@
         .mision img{
             height: .75em;
         }
+        #us-images {
+            width: 100%;
+            box-sizing: border-box;
+            border: 1em solid white;
+            border-radius: 1em;
+        }
+        #us-images div{
+            display: inline-block;
+            width: 33.333%;
+        }
 
-
+        #us-images div img{
+            width:100%;
+        }
+        #mainContainer{
+            max-width: 1300px;
+        }
     </style>
-
 </div>
 @endsection

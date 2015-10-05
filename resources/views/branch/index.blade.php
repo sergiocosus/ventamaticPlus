@@ -25,7 +25,7 @@
         font-size: 1.5em;
         text-align: center;
         color: white;
-        background-color: rgba(255,0,0,.5);
+        background-color: rgba(150,0,0,1);
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
         padding: 5px;
