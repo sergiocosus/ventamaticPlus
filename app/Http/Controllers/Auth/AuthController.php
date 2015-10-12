@@ -2,6 +2,9 @@
 
 namespace Ventamatic\Http\Controllers\Auth;
 
+use Auth;
+use Redirect;
+use Route;
 use Ventamatic\User;
 use Validator;
 use Ventamatic\Http\Controllers\Controller;
@@ -23,6 +26,10 @@ class AuthController extends Controller
 
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
 
+
+    protected $redirectPath = '/';
+    protected $loginPath;
+
     /**
      * Create a new authentication controller instance.
      *
@@ -30,6 +37,7 @@ class AuthController extends Controller
      */
     public function __construct()
     {
+        $this->loginPath = Redirect::back()->getTargetUrl();
         $this->middleware('guest', ['except' => 'getLogout']);
     }
 
@@ -62,4 +70,9 @@ class AuthController extends Controller
             'password' => bcrypt($data['password']),
         ]);
     }
+
+    public function authenticated(){
+        return Redirect::back();;
+    }
+
 }

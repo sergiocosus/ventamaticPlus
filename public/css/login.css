@@ -1,4 +1,4 @@
-#login, #search{
+.hover-menu{
     position: fixed;
     box-sizing: border-box;
     top: 60px;
@@ -24,15 +24,16 @@
     -ms-transition: all .5s;
     -o-transition: all .5s;
     transition: all .5s;
+    cursor:default;
 }
 
 
 
-#login h3{
+#login-menu h3{
     text-align: center;
 }
 
-#login input{
+#login-menu input{
     width:100%;
     box-sizing: border-box;
     -webkit-border-radius: 5px;
@@ -46,7 +47,11 @@
     color: #222222;
 }
 
-#login figure{
+#login-menu input[name="remember"]{
+    width: auto;
+}
+
+#login-menu figure{
     position:absolute;
     width: 5px;
     height: 5px;
@@ -59,7 +64,7 @@
     border-bottom: white solid 10px;
 }
 
-#login>a, #login input[type="submit"], button, .button{
+.hover-menu > a, #login-menu input[type="submit"], button, .button{
     display: inline-block;
     text-decoration: none;
     border: white 1px solid;
@@ -77,9 +82,11 @@
     -ms-transition: all .25s;
     -o-transition: all .25s;
     transition: all .25s;
+
+    cursor: pointer;
 }
 
-#login>a:hover, #login input[type="submit"]:hover,.button:hover, button:hover{
+.hover-menu > a:hover, #login-menu input[type="submit"]:hover,.button:hover, button:hover{
     background-color: rgba(255,255,255,.5);
 }
 

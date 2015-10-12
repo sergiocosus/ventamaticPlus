@@ -6,7 +6,7 @@
     <title></title>
     <link href="css/style.css" rel="stylesheet" type="text/css">
     <link href="css/library/jssor.css" rel="stylesheet" type="text/css">
-    <script src="js/libraryDevelop/jquery-1.11.3.js"></script>
+    <script src="js/libraryDevelop/jquery-1.11.3.min.js"></script>
     @yield('header')
 </head>
 <body>
@@ -17,6 +17,12 @@
     <script src="/js/libraryDevelop/svg.js"></script>
 </body>
 <script>
+
+    @if($errors->has())
+   @foreach ($errors->all() as $error)
+      alert("{{ $error }}");
+    @endforeach
+  @endif
 
 </script>
 @yield('footer')

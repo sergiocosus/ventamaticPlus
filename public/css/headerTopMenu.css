@@ -172,7 +172,7 @@ header>h2{
     transition: all .15s;
 }
 
-#loginButton{
+#user-button {
     position: absolute;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -195,11 +195,11 @@ header>h2{
 }
 
 
-#loginButton:hover{
+#user-button:hover{
     background-color: rgba(255,255,255, .25);
 }
 
-#loginButton>span{
+#user-button >span{
     display:inline-block;
     text-align: center;
     margin-right: 5px;
@@ -207,13 +207,13 @@ header>h2{
 }
 
 @media screen and (max-width: 480px){
-    #loginButton>span{
+    #user-button >span{
         display:none;
     }
 }
 
 
-#loginButton>.svg {
+#user-button >.svg {
     float: right;
     vertical-align: bottom;
     height: 40px;

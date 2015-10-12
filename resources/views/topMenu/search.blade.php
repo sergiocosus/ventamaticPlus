@@ -1,5 +1,5 @@
 
-<section id="search"  class="hide" >
+<section id="search"  class="hover-menu hide" >
     <figure></figure>
     <div class="extra-area"></div>
     <form action="/product">

@@ -21,9 +21,9 @@ class AddNewFieldsToUsers extends Migration {
 			$table->string('address', 100);
 			$table->string('rfc', 13);
 
-			$table->char('locality_id', 4);
-			$table->char('municipality_id', 3);
-			$table->char('state_id', 2);
+			$table->char('locality_id', 4)->nullable();
+			$table->char('municipality_id', 3)->nullable();
+			$table->char('state_id', 2)->nullable();
 
 			$table->softDeletes();
 
