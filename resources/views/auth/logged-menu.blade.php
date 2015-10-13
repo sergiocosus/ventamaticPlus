@@ -4,15 +4,7 @@
     <a href="/auth/logout">
         Cerrar Sesión
     </a>
-    <div class="extra-area"></div>
-    <h3>
-        Bienvenido
-    </h3>
 
-    <p>¿No tienes una cuenta?</p>
-    <a>
-        ¡Regístrate!
-    </a>
 </section>
 
 

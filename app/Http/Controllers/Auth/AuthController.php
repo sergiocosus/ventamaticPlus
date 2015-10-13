@@ -75,4 +75,10 @@ class AuthController extends Controller
         return Redirect::back();;
     }
 
+    public function getRegister()
+    {
+        return view('auth.register', ['viewName' => 'us']);
+    }
+
+
 }

@@ -28,7 +28,6 @@
         ');
 
     ?>
-    <link href="css/index.css" rel="stylesheet" type="text/css">
     <div class="gallery-container">
         @include('components.slider.index',['data' => $data])
     </div>
@@ -87,4 +86,13 @@
             $formBusquedaOpcion.addClass('hide');
         })
     </script>
+
+    <style>
+
+        #mainContainer{
+            padding-top: 1.5em;
+            padding-left: 0;
+            padding-right: 0;
+        }
+    </style>
 @endsection

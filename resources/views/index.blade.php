@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1,  user-scalable=no">
     <title></title>
-    <link href="css/style.css" rel="stylesheet" type="text/css">
-    <link href="css/library/jssor.css" rel="stylesheet" type="text/css">
-    <script src="js/libraryDevelop/jquery-1.11.3.min.js"></script>
+    <link href="{{ elixir('css/all.css') }}" rel="stylesheet" type="text/css">
+    <link href="/css/fonts/varela_round.css" rel="stylesheet" type="text/css">
+    <script src="{{ elixir('js/libraries.js') }}"></script>
+    <script src="{{ elixir('js/app.js') }}"></script>
     @yield('header')
 </head>
 <body>

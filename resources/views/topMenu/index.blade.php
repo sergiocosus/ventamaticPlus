@@ -1,8 +1,7 @@
-<link rel="stylesheet" type="text/css" href="/css/login.css" />
 
 <header>
     <div id="searchButton">
-        <img class="svg fillWhite" src="img/icon/search.svg" />
+        <img class="svg fillWhite" src="/img/icon/search.svg" />
         @include('topMenu.search')
     </div>
     <h2>Ventamatic+</h2>
@@ -21,16 +20,14 @@
                 {{Auth::user()->last_name}}
             </span>
 
-            <img class="svg fillWhite" src="img/icon/user.svg" />
+            <img class="svg fillWhite" src="/img/icon/user.svg" />
             @include('auth.logged-menu')
         @else
             <span>Iniciar<br/>Sesión</span>
-            <img class="svg fillWhite" src="img/icon/user.svg" />
+            <img class="svg fillWhite" src="/img/icon/user.svg" />
             @include('auth.login')
         @endif
     </div>
-    <script src="js/topMenu.js" ></script>
-    <link href="css/headerTopMenu.css" rel="stylesheet" type="text/css" />
 </header>
 
 <script>

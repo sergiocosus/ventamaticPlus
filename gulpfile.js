@@ -11,3 +11,21 @@ var elixir = require('laravel-elixir');
  |
  */
 
+
+elixir(function(mix) {
+    mix.styles([
+            'style.css',
+            'headerTopMenu.css',
+            'index.css',
+            'login.css',
+            'jssor.css'
+        ], 'public/css/all.css')
+        .scripts([
+            'jquery/dist/jquery.min.js'
+        ], 'public/js/libraries.js', 'resources/assets/bower/')
+        .scripts([
+            'InitGallery.js',
+            'topMenu.js'
+        ], 'public/js/app.js')
+        .version(["css/all.css","js/libraries.js","js/app.js"]);
+});

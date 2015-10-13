@@ -51,7 +51,7 @@
     width: auto;
 }
 
-#login-menu figure{
+.hover-menu figure{
     position:absolute;
     width: 5px;
     height: 5px;

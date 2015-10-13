@@ -1,0 +1,24 @@
+{
+  "name": "ventamatic",
+  "version": "0.0.0",
+  "homepage": "https://github.com/sergiocosus/ventamaticPlus",
+  "authors": [
+    "Sergio Contreras Sustaita <sergio.contreras@triolabs.mx>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "jssor-slider": "jssor#*",
+    "noty": "~2.3.7"
+  }
+}
