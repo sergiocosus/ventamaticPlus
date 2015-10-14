@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "2574540451b7a5b79aa91cae5e9bdab9",
+    "hash": "92e79cc69c8b38a7c04f479a791857ae",
     "packages": [
         {
             "name": "barryvdh/laravel-ide-helper",
@@ -1204,6 +1204,52 @@
                 "time"
             ],
             "time": "2015-06-25 04:19:39"
+        },
+        {
+            "name": "nicolaslopezj/searchable",
+            "version": "1.5.15",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nicolaslopezj/searchable.git",
+                "reference": "bf47a9055cd873f06ac9ff32534d56a98953198f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nicolaslopezj/searchable/zipball/bf47a9055cd873f06ac9ff32534d56a98953198f",
+                "reference": "bf47a9055cd873f06ac9ff32534d56a98953198f",
+                "shasum": ""
+            },
+            "require": {
+                "ext-mbstring": "*",
+                "illuminate/database": "4.2.x|~5.0",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Nicolaslopezj\\Searchable\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Lopez",
+                    "email": "nicolaslopezj@me.com"
+                }
+            ],
+            "description": "Eloquent model search trait.",
+            "keywords": [
+                "database",
+                "eloquent",
+                "laravel",
+                "model",
+                "search",
+                "searchable"
+            ],
+            "time": "2015-09-20 14:21:52"
         },
         {
             "name": "nikic/php-parser",
