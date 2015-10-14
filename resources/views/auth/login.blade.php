@@ -16,7 +16,7 @@
 
     </form>
     <p>¿No tienes una cuenta?</p>
-    <a>
+    <a href="/auth/register">
         ¡Regístrate!
     </a>
 </section>

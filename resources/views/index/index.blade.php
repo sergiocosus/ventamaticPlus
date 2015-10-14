@@ -46,10 +46,10 @@
             <span>Electrodomésticos</span>
         </div>
     </div><div class="main-content-right">
-        <div class="button registro">
+        <a href="/auth/register" class="button registro">
             <img src="/img/icon/singin.svg">
             ¡Regístrate!
-        </div>
+        </a>
         <a href="/us">
             <div class="button nosotros">
                 <img src="/img/icon/singin.svg">
