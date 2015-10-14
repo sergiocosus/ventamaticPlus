@@ -56,6 +56,7 @@
         #register input{
             box-shadow: 2px 2px 5px #888888;
             max-width: 300px;
+            background-color: rgba(255,255,255,.5);
         }
         #register {
 

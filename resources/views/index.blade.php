@@ -7,6 +7,7 @@
     <link href="{{ elixir('css/all.css') }}" rel="stylesheet" type="text/css">
     <link href="/css/fonts/varela_round.css" rel="stylesheet" type="text/css">
     <script src="{{ elixir('js/libraries.js') }}"></script>
+    <script src="{{ asset('js/noty.js')}}"></script>
     <script src="{{ elixir('js/app.js') }}"></script>
     @yield('header')
 </head>
@@ -20,9 +21,10 @@
 <script>
 
     @if($errors->has())
-   @foreach ($errors->all() as $error)
-      alert("{{ $error }}");
-    @endforeach
+    var errors={!! json_encode($errors->all()) !!};
+    errors.forEach(function(text){
+       notyError(text);
+    });
   @endif
 
 </script>

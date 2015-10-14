@@ -24,8 +24,12 @@ elixir(function(mix) {
             'jquery/dist/jquery.min.js'
         ], 'public/js/libraries.js', 'resources/assets/bower/')
         .scripts([
+            'noty/js/noty/packaged/jquery.noty.packaged.js'
+        ], 'public/js/noty.js', 'resources/assets/bower/')
+        .scripts([
             'InitGallery.js',
-            'topMenu.js'
+            'topMenu.js',
+            'customNoty.js'
         ], 'public/js/app.js')
         .version(["css/all.css","js/libraries.js","js/app.js"]);
 });
