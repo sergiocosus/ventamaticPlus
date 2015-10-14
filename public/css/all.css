@@ -121,6 +121,68 @@ b{
     font-weight: bold;
 }
 
+
+.custom-form input, .custom-form .select-style{
+    box-shadow: 2px 2px 5px #888888;
+    max-width: 300px;
+    background-color: rgba(255,255,255,.5);
+}
+.custom-form {
+    text-align: center;
+}
+.custom-form h3{
+    font-size: 2em;
+    color:darkslategrey;
+}
+
+.custom-form input[type="submit"]{
+    background-color: dodgerblue;
+}
+
+
+
+
+.select-style {
+    display: inline-block;
+    position: relative;
+    border: 1px solid #ccc;
+
+    border-radius: 3px;
+    overflow: hidden;
+
+    width:100%;
+    background-color: ;
+
+}
+.select-style::before{
+    content: '▼';
+    color: gray;
+    position:absolute;
+    right:0;
+    top:0;
+    bottom:0;
+    margin:auto;
+    vert-align: top;
+    width: 1em;
+    height: 1em;
+    pointer-events: none;
+
+
+}
+
+.select-style select {
+    padding: 5px 8px;
+    border: none;
+    width:100%;
+    box-shadow: none;
+    background: transparent;
+    background-image: none;
+    -webkit-appearance: none;
+}
+
+.select-style select:focus {
+    outline: none;
+}
 header{
     position:fixed;
     box-sizing: border-box;

@@ -2,6 +2,11 @@
 
 
 @section('content')
+
+    @if(Auth::check())
+        <a href="product/create">Alta de productos</a>
+
+    @endif
     <?php $search = Input::get('search'); ?>
     @if(isset($search))
         Resultados de <b>"{{$search}}"</b> </br>

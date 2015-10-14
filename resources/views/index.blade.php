@@ -20,12 +20,19 @@
 </body>
 <script>
 
-    @if($errors->has())
+@if($errors->has())
     var errors={!! json_encode($errors->all()) !!};
     errors.forEach(function(text){
        notyError(text);
     });
-  @endif
+@endif
+
+@if(session('success'))
+    var success={!! json_encode(session('success')) !!};
+    success.forEach(function(text){
+        notySuccess(text);
+    });
+@endif
 
 </script>
 @yield('footer')

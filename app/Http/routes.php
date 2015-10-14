@@ -51,9 +51,9 @@ Route::get('/branch', function () {
     return view('branch.index' , ['viewName' => 'branch']);
 });
 
-Route::get('/product', function () {
-    return view('product.index' , ['viewName' => 'product']);
-});
+Route::get('/product','ProductController@getIndex');
+Route::post('/product/create','ProductController@postCreate');
+Route::get('/product/create','ProductController@getCreate');
 
 Route::get('/management', function () {
     return view('management.index',  ['viewName' => 'management']);

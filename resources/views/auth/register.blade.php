@@ -1,7 +1,7 @@
 @extends('index')
 
 @section('content')
-<form id="register" method="POST" action="/auth/register">
+<form id="register" class="custom-form" method="POST" action="/auth/register">
     {!! csrf_field() !!}
     <h3>Registrate :)</h3>
     <div>
@@ -53,23 +53,7 @@
         #mainContainer{
             max-width: 600px;
         }
-        #register input{
-            box-shadow: 2px 2px 5px #888888;
-            max-width: 300px;
-            background-color: rgba(255,255,255,.5);
-        }
-        #register {
 
-            text-align: center;
-        }
-        #register h3{
-            font-size: 2em;
-            color:darkslategrey;
-        }
-        
-        #register input[type="submit"]{
-            background-color: dodgerblue;
-        }
     </style>
 
 @endsection
