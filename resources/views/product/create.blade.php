@@ -4,9 +4,10 @@
 
 
 @section('content')
-    <form id="register" class="custom-form" method="POST" action="/product/create">
+    <form id="register" class="custom-form" method="POST"
+          action="/product/create" enctype="multipart/form-data">
         {!! csrf_field() !!}
-        <h3>Registrate :)</h3>
+        <h3>Ingrese un producto</h3>
 
         <input type="text" name="name" required maxlength="200"
                value="{{ old('name') }}" placeholder="Nombre del producto">
@@ -38,11 +39,15 @@
             </select>
         </div>
 
+        <input type="text" name="description"
+               placeholder="Descripción del producto"/>
+
         <input type="text" name="bar_code"  required maxlength="50"
                value="{{ old('bar_code') }}" placeholder="Código de barras">
 
 
-
+        <input type="file" name="photo" required
+               value="Seleccione una imagen" accept="image/*" />
         <input type="submit" value="Registar"/>
 
     </form>
