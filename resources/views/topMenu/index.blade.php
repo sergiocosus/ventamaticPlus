@@ -19,7 +19,6 @@
                 <br/>
                 {{Auth::user()->last_name}}
             </span>
-
             <img class="svg fillWhite" src="/img/icon/user.svg" />
             @include('auth.logged-menu')
         @else

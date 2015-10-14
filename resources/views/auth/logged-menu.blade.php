@@ -7,6 +7,11 @@
 
 </section>
 
+<style>
+    #logged-menu a{
+        display:block;
+    }
+</style>
 
 <script>
     var $userButton = $('#user-button');
