@@ -49,6 +49,10 @@ class Product extends Model
         ],
     ];
 
+    public function branchProduct(){
+        return $this->hasMany('Ventamatic\BranchProduct','product_id');
+    }
+
     public function category(){
         return $this->belongsTo('Ventamatic\Category');
     }

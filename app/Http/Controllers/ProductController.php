@@ -23,9 +23,22 @@ class ProductController extends Controller
      */
     public function getIndex(Request $request)
     {
-        $products = Product::search($request->input('search'))->get();
+        $category_id=$request->input('category_id');
+        $category='';
+        $products = Product::search($request->input('search'));
+        if($category_id){
+            $category = Category::find($category_id);
+            if($category){
+                $category= $category->name;
+            }
+            $products->whereCategoryId($category_id);
+        }
+        $products=$products->get();
 
-        return view('product.index',['products' => $products]);
+        return view('product.index',[
+            'products' => $products,
+            'category' => $category,
+        ]);
     }
 
     public function getCreate(){
@@ -50,6 +63,15 @@ class ProductController extends Controller
             ['success' =>['Insertado correctamente']
             ]);
 
+    }
+
+    public function getDecrease(Request $request,$product_id){
+        /** @var BranchProduct $pivot */
+        $pivot=Product::find($product_id)->branches()->first()->pivot;
+
+        $pivot->stock--;
+        $pivot->update();
+        return redirect()->back();
     }
 
 }

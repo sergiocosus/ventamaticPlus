@@ -54,6 +54,7 @@ Route::get('/branch', function () {
 Route::get('/product','ProductController@getIndex');
 Route::post('/product/create','ProductController@postCreate');
 Route::get('/product/create','ProductController@getCreate');
+Route::get('/product/decrease/{id}','ProductController@getDecrease');
 
 Route::get('/management', function () {
     return view('management.index',  ['viewName' => 'management']);

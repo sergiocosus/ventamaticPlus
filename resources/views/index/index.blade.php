@@ -32,24 +32,26 @@
         @include('components.slider.index',['data' => $data])
     </div>
     <div class="main-content-left">
-        <div>
+        <a href="/product?category_id=1">
             <img src="/img/test/001.png" />
             <span>Calzado</span>
-        </div><div>
+        </a><a href="/product?category_id=2">
             <img src="/img/test/002.png" />
             <span>Computadoras</span>
-        </div><div>
+        </a><a href="/product?category_id=3">
             <img src="/img/test/003.png" />
             <span>Electrónica</span>
-        </div><div>
+        </a><a href="/product?category_id=4">
             <img src="/img/test/004.png" />
             <span>Electrodomésticos</span>
-        </div>
+        </a>
     </div><div class="main-content-right">
+        @if(!Auth::check())
         <a href="/auth/register" class="button registro">
             <img src="/img/icon/singin.svg">
             ¡Regístrate!
         </a>
+        @endif
         <a href="/us">
             <div class="button nosotros">
                 <img src="/img/icon/singin.svg">
