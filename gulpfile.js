@@ -11,6 +11,8 @@ var elixir = require('laravel-elixir');
  |
  */
 var bowerPath = 'resources/assets/bower';
+var appJsPath = 'resources/assets/js/';
+
 
 elixir(function(mix) {
     mix.styles([
@@ -43,13 +45,13 @@ elixir(function(mix) {
             'Sell.js',
             'User.js',
             'Product.js'
-        ], 'public/js/mix-services.js','resources/assets/js/Services')
+        ], 'public/js/mix-services.js', appJsPath+'Services')
         .scripts([
             'CartCtrl.js',
             'CategoryCtrl.js',
             'ProductCtrl.js',
             'SellCtrl.js'
-        ], 'public/js/mix-controllers.js','resources/assets/js/Controllers')
+        ], 'public/js/mix-controllers.js', appJsPath+'Controllers')
         .version([
             "css/mix-vendor.css",
             "css/mix-app.css",

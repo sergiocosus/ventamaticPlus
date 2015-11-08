@@ -25,7 +25,7 @@
         <br/>
     @endif
 
-<div  >
+
 
     <div class="button busquedaOpcion">
         <span ng-show="search">
@@ -88,13 +88,12 @@
         </div>
     </section>
 </div>
-</div>
+
 <script>
     var input = {!! json_encode($input) !!};
 </script>
     <style>
         section.product-list{
-            display: inline-block;
             -webkit-column-width: 300px;
             -moz-column-width: 300px;
             column-width: 300px;
