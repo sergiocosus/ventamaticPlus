@@ -2,6 +2,7 @@
 
 
 
+use Auth;
 use Illuminate\Database\Eloquent\Model;
 use Nicolaslopezj\Searchable\SearchableTrait;
 
@@ -28,6 +29,12 @@ use Nicolaslopezj\Searchable\SearchableTrait;
  * @method static \Illuminate\Database\Query\Builder|\Ventamatic\Product whereCreatedAt($value)
  * @method static \Illuminate\Database\Query\Builder|\Ventamatic\Product whereUpdatedAt($value)
  * @method static \Illuminate\Database\Query\Builder|\Ventamatic\Product whereDeletedAt($value)
+ * @property string $description
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Ventamatic\BranchProduct[] $branchProduct
+ * @property-read mixed $can_buy
+ * @method static \Illuminate\Database\Query\Builder|\Ventamatic\Product whereDescription($value)
+ * @method static \Illuminate\Database\Query\Builder|\Ventamatic\Product search($search, $threshold = null, $entireText = false)
+ * @method static \Illuminate\Database\Query\Builder|\Ventamatic\Product searchRestricted($search, $restriction, $threshold = null, $entireText = false)
  */
 class Product extends Model
 {
@@ -41,6 +48,10 @@ class Product extends Model
         'unit',
         'bar_code',
         'description',
+    ];
+
+    protected $appends = [
+        'can_buy',
     ];
 
     protected $searchable = [
@@ -59,5 +70,10 @@ class Product extends Model
 
     public function branches(){
         return $this->belongsToMany('Ventamatic\Branch')->withPivot('stock', 'price');
+    }
+
+    public function getCanBuyAttribute()
+    {
+        return Auth::check();
     }
 }

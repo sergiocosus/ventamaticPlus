@@ -15,6 +15,9 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Category extends Model
 {
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function products(){
         return $this->hasMany('Ventamatic\Product');
     }

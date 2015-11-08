@@ -2,6 +2,7 @@
 
 use DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
 use Ventamatic\Category;
 use Ventamatic\Http\Requests;
 use Ventamatic\Http\Controllers\Controller;
@@ -15,7 +16,6 @@ class ProductController extends Controller
         View::share('viewName', 'product');
     }
 
-
     /**
      * Display a listing of the resource.
      *
@@ -23,21 +23,8 @@ class ProductController extends Controller
      */
     public function getIndex(Request $request)
     {
-        $category_id=$request->input('category_id');
-        $category='';
-        $products = Product::search($request->input('search'));
-        if($category_id){
-            $category = Category::find($category_id);
-            if($category){
-                $category= $category->name;
-            }
-            $products->whereCategoryId($category_id);
-        }
-        $products=$products->get();
-
         return view('product.index',[
-            'products' => $products,
-            'category' => $category,
+            'input' => Input::all(),
         ]);
     }
 

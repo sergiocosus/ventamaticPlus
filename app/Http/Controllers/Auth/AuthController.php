@@ -3,6 +3,7 @@
 namespace Ventamatic\Http\Controllers\Auth;
 
 use Auth;
+use Illuminate\Http\Request;
 use Redirect;
 use Route;
 use Ventamatic\User;
@@ -10,6 +11,7 @@ use Validator;
 use Ventamatic\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use Ventamatic\UserSession;
 
 class AuthController extends Controller
 {
@@ -24,8 +26,11 @@ class AuthController extends Controller
     |
     */
 
-    use AuthenticatesAndRegistersUsers, ThrottlesLogins;
+    use ThrottlesLogins;
 
+    use AuthenticatesAndRegistersUsers {
+        handleUserWasAuthenticated as traitHandleUserWasAuthenticated;
+    }
 
     protected $redirectPath = '/';
     protected $loginPath;
@@ -81,6 +86,19 @@ class AuthController extends Controller
     public function getRegister()
     {
         return view('auth.register', ['viewName' => '']);
+    }
+
+    protected function handleUserWasAuthenticated(Request $request, $throttles)
+    {
+        UserSession::registerLogin(Auth::user());
+        return $this->traitHandleUserWasAuthenticated($request,$throttles);
+    }
+
+    public function getLogout()
+    {
+        UserSession::registerLogout(Auth::user());
+        Auth::logout();
+        return redirect(property_exists($this, 'redirectAfterLogout') ? $this->redirectAfterLogout : '/');
     }
 
 

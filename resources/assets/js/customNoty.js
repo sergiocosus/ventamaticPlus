@@ -1,5 +1,5 @@
 $.noty.defaults = {
-    layout: 'topRight',
+    layout: 'bottomRight',
     theme: 'defaultTheme', // or 'relax'
     type: 'alert',
     text: '', // can be html or string

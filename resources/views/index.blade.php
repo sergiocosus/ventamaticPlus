@@ -1,14 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="ventamatic">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1,  user-scalable=no">
     <title></title>
-    <link href="{{ elixir('css/all.css') }}" rel="stylesheet" type="text/css">
     <link href="/css/fonts/varela_round.css" rel="stylesheet" type="text/css">
-    <script src="{{ elixir('js/libraries.js') }}"></script>
-    <script src="{{ asset('js/noty.js')}}"></script>
-    <script src="{{ elixir('js/app.js') }}"></script>
+    <link href="{{ elixir('css/mix-vendor.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ elixir('css/mix-app.css') }}" rel="stylesheet" type="text/css">
+    <script src="{{ elixir('js/mix-vendor.js') }}"></script>
+    <script src="{{ elixir('js/mix-app.js') }}"></script>
+    <script src="{{ elixir('js/mix-services.js') }}"></script>
+    <script src="{{ elixir('js/mix-controllers.js') }}"></script>
+
+    @if(isset($input))
+    <script>
+        var input = {!! json_encode($input) !!};
+    </script>
+    @endif
     @yield('header')
 </head>
 <body>

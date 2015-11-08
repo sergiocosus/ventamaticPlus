@@ -12,19 +12,27 @@
         </div>
         <ul id="topMenuList"></ul>
     </div>
-    <div id="user-button">
+    <div id="topMenu-left">
+        <div id="user-button">
+            @if(Auth::check())
+                <span>
+                    {{Auth::user()->name}}
+                    <br/>
+                    {{Auth::user()->last_name}}
+                </span>
+                <img class="svg fillWhite" src="/img/icon/user.svg" />
+                @include('auth.logged-menu')
+            @else
+                <span>Iniciar<br/>Sesión</span>
+                <img class="svg fillWhite" src="/img/icon/user.svg" />
+                @include('auth.login')
+            @endif
+        </div>
         @if(Auth::check())
-            <span>
-                {{Auth::user()->name}}
-                <br/>
-                {{Auth::user()->last_name}}
-            </span>
-            <img class="svg fillWhite" src="/img/icon/user.svg" />
-            @include('auth.logged-menu')
-        @else
-            <span>Iniciar<br/>Sesión</span>
-            <img class="svg fillWhite" src="/img/icon/user.svg" />
-            @include('auth.login')
+            <div id="cart-button">
+                <img src="/img/icon/market1.svg"/>
+                @include('cart.menu')
+            </div>
         @endif
     </div>
 </header>

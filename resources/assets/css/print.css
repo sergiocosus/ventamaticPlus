@@ -1,0 +1,25 @@
+@media print{
+    header{
+        display:none
+    }
+    #mainContainer{
+        display:none;
+    }
+    .print{
+        width:100%;
+    }
+    .print table{
+        text-align: left;
+        width: 100%;
+    }
+    .print table body, .print table tr, .print table td{
+        border: thin darkslategrey solid;
+        border-radius: 10px;
+    }
+}
+
+@media screen{
+    .print{
+        display:none;
+    }
+}

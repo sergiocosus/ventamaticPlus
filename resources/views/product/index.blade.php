@@ -2,41 +2,96 @@
 
 
 @section('content')
-    @if($category != '')
-        <h2><b>Categoría:</b> {{$category}}</h2>
-    @endif
+<div ng-controller="product" >
+    <div>
+        <h2>
+            <b>Categoría:</b>
+            <span ng-bind="current.name"></span>
+        </h2>
+        <div class="select-style">
+
+            <select ng-model="selected_category" ng-change="onSearch()">
+                <option value="">Todos</option>
+                <option ng-repeat="category in categories"
+                        ng-bind="category.name"
+                        value="@{{category.id}}"></option>
+            </select>
+        </div>
+    </div>
+
     @if(Auth::check())
         <a class="button" style="background-color: sandybrown; font-weight: bolder;"
            href="product/create">Alta de productos</a>
         <br/>
     @endif
-    <?php $search = Input::get('search'); ?>
-    @if(isset($search))
-        Resultados de <b>"{{$search}}"</b> </br>
-    @endif
-    <section class="product-list">
-    @foreach($products as $product)
-        <?php
-            $branch =$product->branches()->find(1);
-            $pivot = $branch->pivot;
-        ?>
 
-        <div>
-            <img src="/resources/products/{{$product->id}}" />
-            <h3>{{$product->name}}</h3>
-            <span><b>Categoría:</b> {{$product->category->name}}</span><br/>
-            <span><b>Precio:</b> ${{number_format($pivot->price,2)}}</span><br/>
-            <span><b>Existencias:</b> {{number_format($pivot->stock,0)}}</span><br/>
-            <span>{{$product->description}}</span> </br>
-            @if(Auth::check())
-                <a href="/product/decrease/{{$product->id}}">
-                    Simular Compra (Disminuir inventario)
-                </a>
-            @endif
+<div  >
+
+    <div class="button busquedaOpcion">
+        <span ng-show="search">
+            <!--<img src="img/icon/search.svg" /> -->
+            Resultados de: <span ng-bind="search"> Productos</span>
+        </span>
+        <span ng-hide="search">
+            Escriba su búsqueda
+        </span>
+        <div class="hide">
+            <img  src="img/icon/search.svg" />
+            <input type="text"  ng-model="search" ng-change="onSearch()"
+                    placeholder="¡Teclea tus deseos!" />
         </div>
+    </div>
 
-    @endforeach
+    <script>
+        $busquedaOpcion = $('.busquedaOpcion');
+        $spanBusquedaOpcion = $busquedaOpcion.find('span');
+        $formBusquedaOpcion = $busquedaOpcion.find('div');
+        $busquedaOpcion.hover(function(){
+            $spanBusquedaOpcion.addClass('hide');
+            $formBusquedaOpcion.removeClass('hide');
+            setTimeout(function(){
+                $formBusquedaOpcion.find('[ng-model="search"]').focus();
+            },500);
+        }, function(){
+            $spanBusquedaOpcion.removeClass('hide');
+            $formBusquedaOpcion.addClass('hide');
+        })
+    </script>
+
+    <section class="product-list">
+        <div ng-repeat="product in products">
+            <img ng-src="/resources/products/@{{product.id}}" />
+            <h3 ng-bind="product.name"></h3>
+            <span>
+                <b>Categoría:</b>
+                <span ng-bind="product.category.name"></span>
+            </span>
+            <br/>
+            <span>
+                <b>Precio:</b>
+                <span ng-bind="product.branches[0].pivot.price | currency"></span>
+            </span>
+            <br/>
+            <span>
+                <b>Existencias:</b>
+                <span ng-bind="product.branches[0].pivot.stock"></span></span><br/>
+            <span ng-bind="product.description"></span> </br>
+
+            Cantidad: <input ng-model="product.quantity"
+                             type="number" step="1" min="1" value="1" />
+            </br>
+            <a class="button" style="background-color: deepskyblue"
+               ng-if="product.can_buy" ng-click="buy(product)">
+                Añadir al producto
+            </a>
+
+        </div>
     </section>
+</div>
+</div>
+<script>
+    var input = {!! json_encode($input) !!};
+</script>
     <style>
         section.product-list{
             display: inline-block;

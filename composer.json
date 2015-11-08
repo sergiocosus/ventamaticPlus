@@ -10,7 +10,8 @@
         "zizaco/entrust": "dev-laravel-5",
         "barryvdh/laravel-ide-helper": "^2.1",
         "doctrine/dbal": "^2.5",
-        "nicolaslopezj/searchable": "1.*"
+        "nicolaslopezj/searchable": "1.*",
+        "darryldecode/cart": "dev-master"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

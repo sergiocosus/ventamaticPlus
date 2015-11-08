@@ -72,3 +72,23 @@ Route::get('auth/logout', 'Auth\AuthController@getLogout');
 // Registration routes...
 Route::get('auth/register', 'Auth\AuthController@getRegister');
 Route::post('auth/register', 'Auth\AuthController@postRegister');
+
+Route::get('sell', 'SellController@getIndex');
+Route::get('sell/sales', 'SellController@getSales');
+
+Route::group(['prefix' => 'api/v1'], function () {
+    Route::get('product', 'Api\ProductController@getIndex');
+
+    Route::get('category', 'Api\CategoryController@getIndex');
+
+    Route::get('cart', 'Api\CartController@getIndex');
+    Route::put('cart/{id}/{quantity}', 'Api\CartController@putIndex');
+    Route::post('cart/{id}/{quantity}', 'Api\CartController@postIndex');
+    Route::delete('cart/destroy', 'Api\CartController@deleteDestroy');
+    Route::delete('cart/{id}', 'Api\CartController@deleteIndex');
+
+
+    Route::get('sell', 'Api\SellController@getIndex');
+    Route::get('sell/sales', 'Api\SellController@getSales');
+    Route::get('user/current', 'Api\UserController@getCurrent');
+});
