@@ -24,8 +24,9 @@
                         }
                         if(sessionMoment.isBefore(current,'hour')){
                             j++;
+                        }else{
+                            break;
                         }
-                        break;
                     }
                     current.add(1,'hour');
                     i++;
