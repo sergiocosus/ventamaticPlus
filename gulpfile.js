@@ -31,9 +31,13 @@ elixir(function(mix) {
             'angular/angular.js',
             'Chart.js/Chart.js',
             'angular-chart.js/angular-chart.js',
+            'd3/d3.js',
+            'moment/moment.js',
+            'moment/locale/es.js',
             'noty/js/noty/packaged/jquery.noty.packaged.js'
         ], 'public/js/mix-vendor.js', bowerPath)
         .scripts([
+            'config.js',
             'InitGallery.js',
             'topMenu.js',
             'customNoty.js',
@@ -44,7 +48,8 @@ elixir(function(mix) {
             'Category.js',
             'Sell.js',
             'User.js',
-            'Product.js'
+            'Product.js',
+            'UserSession.js'
         ], 'public/js/mix-services.js', appJsPath+'Services')
         .scripts([
             'CartCtrl.js',

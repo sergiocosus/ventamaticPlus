@@ -2,17 +2,48 @@
 
 @section('content')
     <script>
-        Ventamatic.controller("LineCtrl", function ($scope) {
-            console.log("holass");
-            $scope.labels = ["January", "February", "March", "April", "May", "June", "July"];
-            $scope.series = ['Series A', 'Series B'];
-            $scope.data = [
-                [65, 59, 80, 81, 56, 55, 40],
-                [28, 48, 40, 19, 86, 27, 90]
-            ];
-            $scope.onClick = function (points, evt) {
-                console.log(points, evt);
-            };
+        Ventamatic.controller("LineCtrl", function ($scope, UserSession) {
+            UserSession.get().then(function(sessions){
+                var current = moment().hour(0).minute(0).second(0);
+                var last = moment(current).add(1,'day');
+
+                var data=[];
+                var labels=[];
+                var i= 0;
+                var j=0;
+                while(!current.isSame(last,'hour')){
+                    labels[i]=moment(current).format('hh:mm a');
+
+                    data[i] = 0;
+                    while(j < sessions.length) {
+                        var sessionMoment =moment.utc(sessions[j].created_at);
+                        if(sessionMoment.isSame(current,'hour')) {
+                            data[i]++;
+                            j++;
+                            continue;
+                        }
+                        if(sessionMoment.isBefore(current,'hour')){
+                            j++;
+                        }
+                        break;
+                    }
+                    current.add(1,'hour');
+                    i++;
+                    if(i>= 100){
+                        break;
+                    }
+                }
+
+                $scope.labels = labels;
+                $scope.series = ['Series A'];
+                $scope.data = [
+                    data
+                ];
+                $scope.onClick = function (points, evt) {
+                    console.log(points, evt);
+                };
+            });
+
         });
     </script>
     <div ng-controller="LineCtrl">
