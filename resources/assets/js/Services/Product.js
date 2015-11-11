@@ -15,6 +15,16 @@ Ventamatic.factory('Product', function($http) {
         });
     };
 
+    User.getCategoryCount = function () {
+        var request = {
+            url: PATH+'/category-count',
+            method: "GET"
+        };
+        return $http(request).then(function (response) {
+            return  response.data;
+        });
+    };
+
     User.decrease=function(id){
         return $http.get('product/decrease/'+id).then(function (response) {
             return response.data;

@@ -62,6 +62,44 @@
             $scope.updateData();
 
         });
+
+        Ventamatic.controller("CategoriesGraphicCtrl", function ($scope, Product) {
+            $scope.data = null;
+            $scope.type = "quantity";
+            $scope.updateData = function(){
+                console.log("updating");
+                Product.getCategoryCount().then(function(categoryCount){
+                    var data = [];
+                    var labels = [];
+
+                    for(var i =0; i<categoryCount.length;i++){
+                        switch ($scope.type){
+                            case "quantity":
+                                data.push(categoryCount[i].quantity);
+                                $scope.title = "Cantidad";
+                                break;
+                            case "money":
+                                data.push(categoryCount[i].total);
+                                $scope.title = "Ingresos";
+                                break;
+                        }
+                        labels.push(categoryCount[i].name);
+                    }
+                    $scope.labels = labels;
+                    $scope.series = 'Cantidad de producttos vendidos por categorias';
+                    $scope.data = data;
+                    console.log(data,labels);
+                });
+            };
+
+
+            setInterval(function(){
+                $scope.updateData();
+            },5000);
+
+            $scope.updateData();
+
+        });
     </script>
     <section class="charts">
         <div class="ventamatic-chart" ng-controller="LineCtrl">
@@ -105,6 +143,29 @@
             </section>
             <div>
                 <canvas id="line" class="chart chart-line" chart-data="data"
+                        chart-labels="labels" chart-legend="true" chart-series="series"
+                        chart-click="onClick" >
+                </canvas>
+            </div>
+
+        </div>
+
+
+        <div class="ventamatic-chart" ng-controller="CategoriesGraphicCtrl">
+            <h3 >Gráfico de productos vendidos por categoría - <span ng-bind="title"></span></h3>
+
+            <section class="ventamatic-chart-controls">
+                <select ng-model="type" ng-change="updateData()">
+                    <option value="quantity" selected>
+                        Cantidad
+                    </option>
+                    <option value="money">
+                        Dinero
+                    </option>
+                </select>
+            </section>
+            <div>
+                <canvas id="line" class="chart chart-pie" chart-data="data"
                         chart-labels="labels" chart-legend="true" chart-series="series"
                         chart-click="onClick" >
                 </canvas>

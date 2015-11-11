@@ -36,4 +36,5 @@ class Sale extends Model
                 'price',
             ]);
     }
+
 }

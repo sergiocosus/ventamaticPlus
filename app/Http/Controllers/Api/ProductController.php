@@ -1,5 +1,6 @@
 <?php namespace Ventamatic\Http\Controllers\Api;
 
+use DB;
 use Illuminate\Http\Request;
 use Ventamatic\Category;
 use Ventamatic\Http\Requests;
@@ -28,5 +29,15 @@ class ProductController extends Controller
         ]);
         $products=$products->get();
         return $products;
+    }
+
+    public function getCategoryCount()
+    {
+        return DB::select('select categories.name, sum(product_sale.quantity) as quantity,
+  sum(product_sale.quantity*product_sale.price) as total
+from products join product_sale ON products.id = product_sale.product_id
+  JOIN categories on products.category_id = categories.id
+
+GROUP BY category_id ;');
     }
 }
