@@ -23,6 +23,16 @@ Ventamatic.factory('Sell', function($http) {
         });
     };
 
+    User.allSales = function(){
+        var request = {
+            url: PATH+'/all-sales',
+            method: "GET"
+        };
+        return $http(request).then(function (response) {
+            return  response.data;
+        });
+    };
+
 
 
     return User;

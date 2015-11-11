@@ -27,10 +27,54 @@
             $scope.updateData();
 
         });
+
+
+        Ventamatic.controller("SalesGraphicCtrl", function ($scope, Sell,ChartManager) {
+            $scope.data = null;
+            $scope.period = 'day';
+
+            $scope.periods = ChartManager.periodData;
+            $scope.updateChart = function(callback){
+                ChartManager.update($scope,callback, "Ventas");
+            };
+
+            $scope.updateData = function(){
+                console.log("updating");
+                Sell.allSales().then(function(sales){
+                    $scope.data = sales;
+                    $scope.updateChart(function(data,values){
+                        return values + (+data.total);
+                    } );
+                });
+            };
+            setInterval(function(){
+                $scope.updateData();
+            },5000);
+
+            $scope.updateData();
+
+        });
     </script>
     <section class="charts">
         <div class="ventamatic-chart" ng-controller="LineCtrl">
             <h3 >Gráfico de visitas - <span ng-bind="title"></span></h3>
+            <div>
+                <canvas id="line" class="chart chart-line" chart-data="data"
+                        chart-labels="labels" chart-legend="true" chart-series="series"
+                        chart-click="onClick" >
+                </canvas>
+            </div>
+            <n>Periodo viisble:</n>
+            <select ng-model="period" ng-change="updateData()"
+                    ng-options="key as x.title for (key,x) in periods">
+            </select>
+
+        </div>
+    </section>
+
+    <section class="charts">
+        <div class="ventamatic-chart" ng-controller="SalesGraphicCtrl">
+            <h3 >Gráfico de ventas - <span ng-bind="title"></span></h3>
             <div>
                 <canvas id="line" class="chart chart-line" chart-data="data"
                         chart-labels="labels" chart-legend="true" chart-series="series"
@@ -57,8 +101,8 @@
             border: gray solid 2px;
             border-radius: 20px;
             overflow: hidden;
-            flex: 1;
-            -webkit-flex: 1;
+            flex-grow: 1;
+            -webkit-flex-grow: 1;
         }
         .ventamatic-chart h3{
             background-color: rgba(0,0,0,.5);

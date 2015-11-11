@@ -5,7 +5,7 @@ Ventamatic.factory('ChartManager', function($http) {
             title: 'Año',
             subPeriod: 'month',
             subTitle: 'mes',
-            format: 'MMMM',
+            format: 'YYYY/MMMM',
             titleFormat: 'YYYY'
         },
         'month': {
@@ -56,8 +56,8 @@ Ventamatic.factory('ChartManager', function($http) {
         var titleFormat = periodInfo.titleFormat;
         var subTitle = periodInfo.subTitle;
 
-        var current = moment().startOf(period);
-        var last = moment(current).add(1,period);
+        var current = moment().add(-1,period).startOf(subPeriod);
+        var last = moment(current).add(+1,period).add(+1,subPeriod);
         var data=[];
         var labels=[];
         var i= 0;

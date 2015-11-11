@@ -90,6 +90,8 @@ Route::group(['prefix' => 'api/v1'], function () {
 
     Route::get('sell', 'Api\SellController@getIndex');
     Route::get('sell/sales', 'Api\SellController@getSales');
+    Route::get('sell/all-sales', 'Api\SellController@getAllSales');
+
     Route::get('user/current', 'Api\UserController@getCurrent');
 
     Route::get('user-session', 'Api\UserSessionController@getIndex');

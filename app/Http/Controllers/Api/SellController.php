@@ -64,4 +64,12 @@ class SellController extends Controller
 
         return json_encode($sales);
     }
+
+    public function getAllSales(){
+        $sales = Sale::select('created_at','total')
+            ->orderBy('created_at')
+            ->get();
+
+        return $sales;
+    }
 }

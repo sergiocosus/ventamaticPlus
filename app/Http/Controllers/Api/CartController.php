@@ -35,14 +35,9 @@ class CartController extends Controller
                 'quantity' => $quantity,
                 'attributes' => []
             ]);
-            return ['success' => true,
-                'cart' =>$productInCart->quantity ,
-                'branch' =>$branchProduct,
-            'my' => $myquantity];
+            return ['success' => true];
         }else{
-            return ['success' => false,
-                'branch' =>$branchProduct,
-                'my' => $myquantity];
+            return ['success' => false];
         }
 
     }
