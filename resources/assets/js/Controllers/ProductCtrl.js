@@ -24,7 +24,10 @@ Ventamatic.controller('product', function($scope, $http, Product, Category, Cart
 
     $scope.onSearch = function(){
         $scope.initCategory($scope.selected_category);
-        User.get($scope.selected_category, $scope.search).then(function(products){
+        Product.get($scope.selected_category, $scope.search).then(function(products){
+            products.forEach(function(element){
+                element.quantity=1;
+            });
             $scope.products = products;
         })
     };

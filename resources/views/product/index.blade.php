@@ -58,8 +58,8 @@
         })
     </script>
 
-    <section class="product-list">
-        <div ng-repeat="product in products">
+    <section class="product-list" >
+        <div ng-repeat="product in products" ng-if="product.id != 12 && product.id != 14 && product.id != 15 && product.id != 25">
             <img ng-src="/resources/products/@{{product.id}}" />
             <h3 ng-bind="product.name"></h3>
             <span>
@@ -77,13 +77,17 @@
                 <span ng-bind="product.branches[0].pivot.stock"></span></span><br/>
             <span ng-bind="product.description"></span> </br>
 
-            Cantidad: <input ng-model="product.quantity"
-                             type="number" step="1" min="1" value="1" />
+
             </br>
             <a class="button" style="background-color: deepskyblue"
                ng-if="product.can_buy" ng-click="buy(product)">
                 Añadir al producto
             </a>
+            <input  ng-if="product.can_buy"
+                    ng-model="product.quantity"
+                    type="number" step="1" min="@{{ (product.branches[0].pivot.stock>0)?0:1 }}"
+                    max="@{{product.branches[0].pivot.stock}}"
+                    style="width:50px"/>
 
         </div>
     </section>
