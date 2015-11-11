@@ -49,7 +49,8 @@ elixir(function(mix) {
             'Sell.js',
             'User.js',
             'Product.js',
-            'UserSession.js'
+            'UserSession.js',
+            'ChartManager.js'
         ], 'public/js/mix-services.js', appJsPath+'Services')
         .scripts([
             'CartCtrl.js',
