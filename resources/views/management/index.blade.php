@@ -100,6 +100,26 @@
             $scope.updateData();
 
         });
+
+
+        Ventamatic.controller("Minimos", function ($scope, Product) {
+            $scope.data = null;
+            $scope.type = "quantity";
+            $scope.updateData = function(){
+                console.log("updating");
+                Product.getLowStock().then(function(products){
+                   $scope.products=products;
+                });
+            };
+
+
+            setInterval(function(){
+                $scope.updateData();
+            },5000);
+
+            $scope.updateData();
+
+        });
     </script>
     <section class="charts">
         <div class="ventamatic-chart" ng-controller="LineCtrl">
@@ -170,6 +190,41 @@
                         chart-click="onClick" >
                 </canvas>
             </div>
+
+        </div>
+
+
+
+
+
+        <div class="ventamatic-chart" ng-controller="Minimos">
+
+            <table style="width: 100%">
+                <thead>
+                <tr>
+                    <th colspan="5">
+                        <h3 >Mínimos en inventario - <span ng-bind="title"></span></h3>
+                    </th>
+                </tr>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre del producto</th>
+                    <th>Categoria</th>
+                    <th>Mínimo</th>
+                    <th>Inventario</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="product in products">
+                    <td ng-bind="product.id"></td>
+                    <td ng-bind="product.name"></td>
+                    <td ng-bind="product.category"></td>
+                    <td ng-bind="product.minimum"></td>
+                    <td ng-bind="product.stock"></td>
+                </tr>
+                </tbody>
+            </table>
+
 
         </div>
 

@@ -34,10 +34,17 @@ class ProductController extends Controller
     public function getCategoryCount()
     {
         return DB::select('select categories.name, sum(product_sale.quantity) as quantity,
-  sum(product_sale.quantity*product_sale.price) as total
-from products join product_sale ON products.id = product_sale.product_id
-  JOIN categories on products.category_id = categories.id
+            sum(product_sale.quantity*product_sale.price) as total
+            from products join product_sale ON products.id = product_sale.product_id
+            JOIN categories on products.category_id = categories.id
 
-GROUP BY category_id ;');
+            GROUP BY category_id ;');
+    }
+
+    public function getLowStock(){
+        return DB::select('select products.id,products.name,categories.name as category,minimum,stock  from
+  products JOIN branch_product on products.id = branch_product.product_id
+    JOIN categories on products.category_id = categories.id
+where minimum > stock;');
     }
 }

@@ -25,6 +25,16 @@ Ventamatic.factory('Product', function($http) {
         });
     };
 
+    User.getLowStock = function () {
+        var request = {
+            url: PATH+'/low-stock',
+            method: "GET"
+        };
+        return $http(request).then(function (response) {
+            return  response.data;
+        });
+    };
+
     User.decrease=function(id){
         return $http.get('product/decrease/'+id).then(function (response) {
             return response.data;

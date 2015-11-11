@@ -79,6 +79,7 @@ Route::get('sell/sales', 'SellController@getSales');
 Route::group(['prefix' => 'api/v1'], function () {
     Route::get('product', 'Api\ProductController@getIndex');
     Route::get('product/category-count', 'Api\ProductController@getCategoryCount');
+    Route::get('product/low-stock', 'Api\ProductController@getLowStock');
 
     Route::get('category', 'Api\CategoryController@getIndex');
 
