@@ -57,38 +57,61 @@ Ventamatic.factory('ChartManager', function($http) {
         var subTitle = periodInfo.subTitle;
 
         var current = moment().add(-1,period).startOf(subPeriod);
-        var last = moment(current).add(+1,period).add(+1,subPeriod);
-        var data=[];
-        var labels=[];
-        var i= 0;
-        var j=0;
-
         $scope.title = current.format(titleFormat);
 
-        while(!current.isSame(last,subPeriod)){
-            labels[i]=moment(current).format(format);
-            data[i] = 0;
+        var backPeriods = $scope.backPeriods;
 
-            while(j < sessions.length) {
-                var sessionMoment =moment.utc(sessions[j].created_at);
-                if(sessionMoment.isSame(current,subPeriod)) {
-                    data[i] = counterCallback(sessions[j],data[i]);
-                    j++;
-                    continue;
-                }
-                if(sessionMoment.isBefore(current,subPeriod)){
-                    j++;
-                }else{
-                    break;
-                }
+
+
+
+        var labels=[];
+        var arrayData =[];
+        var arraySeries = [];
+
+        for(var jumpingPeriods=0; jumpingPeriods<=backPeriods; jumpingPeriods++){
+            current = moment().add(-1-jumpingPeriods,period).startOf(subPeriod);
+            var last = moment(current).add(+1,period).add(+1,subPeriod);
+
+            var data=[];
+            var dataTag = title+'/'+subTitle;
+            if(jumpingPeriods!=0){
+                 dataTag += " hace "+jumpingPeriods+" "+periodInfo.subTitle+"(s)";
             }
-            current.add(1,subPeriod);
-            i++;
+
+
+            var i= 0;
+            var j=0;
+
+            while(!current.isSame(last,subPeriod)){
+                if(jumpingPeriods==0){
+                    labels[i]=moment(current).format(format);
+                }
+
+                data[i] = 0;
+                while(j < sessions.length) {
+                    var sessionMoment =moment.utc(sessions[j].created_at);
+                    if(sessionMoment.isSame(current,subPeriod)) {
+                        data[i] = counterCallback(sessions[j],data[i]);
+                        j++;
+                        continue;
+                    }
+                    if(sessionMoment.isBefore(current,subPeriod)){
+                        j++;
+                    }else{
+                        break;
+                    }
+                }
+                current.add(1,subPeriod);
+                i++;
+            }
+
+            arrayData.push(data);
+            arraySeries.push(dataTag);
         }
 
         $scope.labels = labels;
-        $scope.series = [title+' por '+subTitle];
-        $scope.data = [data];
+        $scope.series = arraySeries;
+        $scope.data = arrayData;
     };
 
 

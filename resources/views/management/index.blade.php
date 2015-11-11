@@ -5,6 +5,7 @@
         Ventamatic.controller("LineCtrl", function ($scope, UserSession,ChartManager) {
             $scope.data = null;
             $scope.period = 'day';
+            $scope.backPeriods=0;
 
             $scope.periods = ChartManager.periodData;
             $scope.updateChart = function(callback){
@@ -33,6 +34,7 @@
             $scope.data = null;
             $scope.period = 'day';
             $scope.type = 'quantity';
+            $scope.backPeriods=0;
 
             $scope.periods = ChartManager.periodData;
             $scope.updateChart = function(callback){
@@ -70,6 +72,9 @@
                         ng-options="key as x.title for (key,x) in periods">
                 </select>
             </section>
+            Periodos pasados:
+            <input type="number" min="0" step="1" ng-model="backPeriods"
+                ng-change="updateData()"/>
             <div>
                 <canvas id="line" class="chart chart-line" chart-data="data"
                         chart-labels="labels" chart-legend="true" chart-series="series"
@@ -93,6 +98,10 @@
                         Dinero
                     </option>
                 </select>
+                Periodos pasados:
+                <input type="number" min="0" step="1" ng-model="backPeriods"
+                       ng-change="updateData()"/>
+
             </section>
             <div>
                 <canvas id="line" class="chart chart-line" chart-data="data"
