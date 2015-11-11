@@ -75,7 +75,7 @@ Ventamatic.factory('ChartManager', function($http) {
             var data=[];
             var dataTag = title+'/'+subTitle;
             if(jumpingPeriods!=0){
-                 dataTag += " hace "+jumpingPeriods+" "+periodInfo.subTitle+"(s)";
+                 dataTag += " hace "+jumpingPeriods+" "+periodInfo.title+"(s)";
             }
 
 
