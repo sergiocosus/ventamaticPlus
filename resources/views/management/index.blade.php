@@ -203,7 +203,7 @@
                 <thead>
                 <tr>
                     <th colspan="5">
-                        <h3 >Mínimos en inventario - <span ng-bind="title"></span></h3>
+                        <h3 >Mínimos en inventario  <span ng-bind="title"></span></h3>
                     </th>
                 </tr>
                 <tr>
@@ -215,7 +215,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr ng-repeat="product in products">
+                <tr ng-repeat="product in products" ng-class="product.stock == 0 ? 'red-bg' : ''">
                     <td ng-bind="product.id"></td>
                     <td ng-bind="product.name"></td>
                     <td ng-bind="product.category"></td>
@@ -255,11 +255,18 @@
         }
 
         .ventamatic-chart-controls{
-            background-color: rgba(0,255,0,.5);
+            background-color: rgba(50,200,0,.7);
         }
 
         .ventamatic-chart div{
             padding: 10px;
+        }
+
+        thead{
+            background-color: rgba(200,40,235,0.5);
+        }
+        .red-bg{
+            background-color: rgba(200,0,0,.75);
         }
     </style>
 
