@@ -1,5 +1,6 @@
 
 Ventamatic.controller('product', function($scope, $http, Product, Category, Cart) {
+
     $scope.selected_category = input.category_id || null;
     $scope.search = input.search || null;
 
@@ -36,4 +37,5 @@ Ventamatic.controller('product', function($scope, $http, Product, Category, Cart
         $scope.categories = categories;
         $scope.onSearch();
     });
+
 });

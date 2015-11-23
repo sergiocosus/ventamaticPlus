@@ -123,7 +123,7 @@
     </script>
     <section class="charts">
         <div class="ventamatic-chart" ng-controller="LineCtrl">
-            <h3 >Gráfico de visitas - <span ng-bind="title"></span></h3>
+            <h3 style="background-color: rgba(0,50,255,.5)" >Gráfico de visitas - <span ng-bind="title"></span></h3>
             <section class="ventamatic-chart-controls">
                 <n>Periodo visible:</n>
                 <select ng-model="period" ng-change="updateData()"
@@ -172,7 +172,7 @@
 
 
         <div class="ventamatic-chart" ng-controller="CategoriesGraphicCtrl">
-            <h3 >Gráfico de productos vendidos por categoría - <span ng-bind="title"></span></h3>
+            <h3 style="background-color: rgba(150,100,00,.7)">Gráfico de productos vendidos por categoría - <span ng-bind="title"></span></h3>
 
             <section class="ventamatic-chart-controls">
                 <select ng-model="type" ng-change="updateData()">
@@ -239,8 +239,8 @@
         }
 
         .ventamatic-chart{
-            background-color: rgba(255,255,255,.25);
-            border: gray solid 2px;
+            background-color: rgba(205,205,205,.25);
+            border: white solid 5px;
             border-radius: 20px;
             overflow: hidden;
             flex-grow: 1;

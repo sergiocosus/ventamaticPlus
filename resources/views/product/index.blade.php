@@ -81,7 +81,7 @@
             </br>
             <a class="button" style="background-color: deepskyblue"
                ng-if="product.can_buy" ng-click="buy(product)">
-                Añadir al producto
+                Añadir al carrito
             </a>
             <input  ng-if="product.can_buy"
                     ng-model="product.quantity"
