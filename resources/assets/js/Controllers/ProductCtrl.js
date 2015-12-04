@@ -28,10 +28,17 @@ Ventamatic.controller('product', function($scope, $http, Product, Category, Cart
         Product.get($scope.selected_category, $scope.search).then(function(products){
             products.forEach(function(element){
                 element.quantity=1;
+                element.like=0;
             });
             $scope.products = products;
         })
     };
+
+    $scope.changeColor = function(product,number){
+        console.log(number);
+        product.like=number;
+    };
+
 
     Category.get().then(function(categories){
         $scope.categories = categories;

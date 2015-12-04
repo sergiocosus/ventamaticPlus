@@ -11,7 +11,7 @@
     <script src="{{ elixir('js/mix-app.js') }}"></script>
     <script src="{{ elixir('js/mix-services.js') }}"></script>
     <script src="{{ elixir('js/mix-controllers.js') }}"></script>
-
+    <link href="css/icon-moon.css" rel="stylesheet" type="text/css" />
     @if(isset($input))
     <script>
         var input = {!! json_encode($input) !!};
